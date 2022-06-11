@@ -14,4 +14,10 @@ $(document).ready(function(){
         )
     })
 
+    // Fade In About Me Button (), ("slow"), ("10000")
+    $("about-me-btn").click(function(){
+        $("#div2").fadeIn("slow");
+        $("#div2").fadeIn("slow");
+        $("#div2").fadeIn("slow");
+      });
 })

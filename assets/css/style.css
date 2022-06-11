@@ -34,6 +34,11 @@ html{
     pointer-events: none;
 }
 
+.press-2p{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
 /* Navbar */
 .navbar{
     background: transparent;
@@ -176,11 +181,6 @@ html{
     text-shadow: 1px 1px 1px black;
 }
 
-#About-Me{
-    color: rgb(48, 48, 48);
-    line-height: 3;
-}
-
 #About-Me h2{
     font-family: 'Dancing Script', cursive;
     font-weight: 600 !important;
@@ -190,23 +190,40 @@ html{
     font-family: 'Montserrat', sans-serif;
 }
 
-#About-Me p{
+.carousel-item{
     font-family: 'Dancing Script', cursive;
     font-weight: 500 !important;
     font-size: 20px;
-    color: rgb(88, 88, 88);
+    color: rgb(44, 44, 44);
+    line-height: 3;
+}
+
+.profile-about-me{
+    width: 256px;
+    height: 256px;
+    border: 1px;
+    border-radius: 50%;
+}
+
+.logos-about-me{
+    height: 64px;
+    width: 64px;
 }
 
 .carousel-indicators{
     bottom: -10px !important;
 }
 
-.carousel-control-prev{
-    left: -100px !important;
+.carousel-control-next{
+    right: -50px !important;
 }
 
-.carousel-control-next{
-    right: -100px !important;
+.text-neon{
+    color: rgb(18, 245, 18);
+}
+
+.text-neon-red{
+    color: rgb(255, 0, 0);
 }
 /* End of About me */
 
