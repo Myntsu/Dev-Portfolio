@@ -5,6 +5,7 @@
 
 html{
     scroll-behavior: auto !important;
+    box-sizing: border-box;
 }
 
 /* Background image */
@@ -36,6 +37,11 @@ html{
 .press-2p{
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
+}
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 /* Navbar */
@@ -159,8 +165,6 @@ html{
     width: 345px;
 }
 /* End of Hero Section */
-
-
 
 /* Buttons style */
 .brd{
@@ -313,3 +317,30 @@ html{
 }
 /* End of Footer */
 
+.works-done {
+    max-width: 20rem !important;
+    width: 100%;
+
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(30, 30, 30);
+
+    border-style: solid;
+    border-width: 0.1em;
+    border-color: rgb(30, 30, 30);
+    border-radius: .5em 5em .5em .5em;
+}
+
+.works-done:hover {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    transform: scale(1.05);
+    transition: transform 250ms ease-out;
+}
+
+.works-done:active {
+    box-shadow: 0 0 1px 6px rgb(20, 20, 20, 0.2) !important;
+}
+
+.works-done span {
+    font-size: 12px;
+}
