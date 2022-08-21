@@ -46,6 +46,11 @@
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon/touch-ipad.png">
     <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/touch-iphone.png">
     <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon/touch-ipad-ret.png">
+
+    <style>
+
+    </style>
+
     </head>
 <body>
         
@@ -155,13 +160,15 @@
     </div>
 
     <!-- About me -->
-    <section id="About-Me" class="container my-5 d-none d-lg-flex">
-        <div class="row justify-content-center">
-            <div class="col-10 col-xl-6 bg-white border-top border-start border-end rounded-top border-dark text-dark">
+    <section id="About-Me" class="container my-5 d-none d-lg-flex p-0 justify-content-evenly">
+        <div class="row w-50">
+            <!-- Title: user profile -->
+            <div class="col-12 bg-white border-top border-start border-end rounded-top border-dark text-dark text-center">
                     <i class="fa-solid fa-id-card-clip"></i> <span class="press-2p px-2">User Profile</span>
             </div>
-            <div class="col-10 col-xl-6"></div>
-            <div class="col-10 col-xl-6 border border-dark bg-dark mb-5">
+
+            <!-- User information -->
+            <div class="col-12 border border-dark bg-dark">
                 <div class="row justify-content-between px-3 mt-3">
                     <div class="col-5 bg-white border-top border-start border-end rounded-start border-dark text-dark border-white text-center">
                         <i class="fa-solid fa-user-secret"></i></i> <span class="press-2p px-2">User Avatar</span>
@@ -172,11 +179,11 @@
                     <hr>
                 </div>
                 <div class="row px-3 align-items-start mb-3">
-                    <div class="col-5">
+                    <div class="col-5 d-none d-xl-grid">
                         <img src="assets/img/about-me/smytsu_square.jpg" alt="" class="profile-about-me img-fluid border border-dark pt-3 pe-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Smytsu">
                         <h6 class="col-12 text-white text-center mt-3"><i class="fa-solid fa-users-viewfinder pe-2 fa-lg"></i><span class="press-2p text-neon-red">Priority Target</span></h6>
                     </div>
-                    <div class="col-7 bg-white py-2 border border-white rounded">
+                    <div class="col-12 col-xl-7 bg-white py-2 border border-white rounded">
                         <div class="row">
                             <p class="press-2p text-decoration-underline col-4">User</p><span class="col-1 press-2p">:</span><p class="col-7 press-2p"> Myndi</p>
                             <p class="press-2p text-decoration-underline col-4">Age</p><span class="col-1 press-2p">:</span><p class="col-7 press-2p"> 29 years old</p>
@@ -267,26 +274,16 @@
                         data-cursor-speed="700">Press enter...</p></div>
                 </div>
             </div>
-            <div class="col-1 d-none d-xl-flex mb-3"></div>
-            <div class="col-10 col-xl-5 mb-5 justify-content-center">
-                <div class="row">
-                    <button id="about-me-btn" class="col-12 btn btn-outline-danger btn-lg">Deploy info</button>
-                </div>
-                <div class="row">
-                    <div id="div2" class="col-12" style="display: none;">
-                        <p>a</p>
-                        <p>b</p>
-                        <p>c</p>
-                        <p>d</p>
-                        <p>e</p>
-                        <p>g</p>
-                    </div>
-                    <div id="div3" class="col-12 text-center">
-                        <img src="assets/img/about-me/depositphotos_19634231-stock-photo-confidential.jpg" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>   
-    </div>
+        </div>
+        <div style="width: 45%;">
+            <div class="border rounded-top border-dark text-center">
+                <i class="fa-solid fa-circle-user"></i><span class="press-2p"> Characters</span>
+            </div>
+            <!-- Image -->
+            <div class="oc position-relative border-start border-end border-bottom border-dark">
+                <a href="characters.html" class="stretched-link"></a>
+            </div>
+        </div>
     </section>
 
     <!-- Experience -->
