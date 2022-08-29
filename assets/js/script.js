@@ -22,3 +22,38 @@ $(document).ready(function(){
         $("#div3").fadeToggle(0);
       });
 })
+
+const colors = document.querySelectorAll(`.colors`);
+const btn = document.querySelector(".button");
+
+function handleClick({ target }) {
+	const clr = window
+		.getComputedStyle(target)
+		.getPropertyValue("background-color");
+	// 	change the background color of the button to the div color
+	btn.style.backgroundColor = clr;
+
+	// 	copy the color value to clipboard
+	navigator.clipboard.writeText(clr);
+
+	// 	show the color value of div color to the button
+	btn.innerHTML = clr;
+}
+
+for (let color of colors) {
+	color.addEventListener("click", handleClick);
+}
+
+function myFunction() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copied: " + copyText.value;
+    }
+  
+function outFunc() {
+    var tooltip = document.getElementById("myTooltip");
+    tooltip.innerHTML = "Copy to clipboard";
+}
+
+$('body').on("click touchstart", ".switch", function(e){
+    $(".regular, .alt").toggle();
+ });

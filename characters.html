@@ -50,65 +50,265 @@
     <style>
 
         .alt-version {
+            padding: 0.25em 1.5em;
+            font-size: 0.7rem;
+            text-transform: uppercase;
 
+            background-color: #e45144;
+
+            border: 0.25em solid #ff948b;
+            border-radius: .15em;
         }
 
+        .alt-version:hover {
+            opacity: 0.85;
+        }
+
+        .alt-version:active {
+            opacity: 1;
+            background-color: rgb(220, 78, 78);
+            border: 0.25em solid rgb(220, 78, 78);
+            color: white;
+            box-shadow: 0px 0px 1px 3px #ff948b;
+        }
+
+        .mont {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+        }
+
+        .info-box {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        #color-garnet {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #610c04;
+            cursor: pointer;
+        }
+
+        #color-cedar {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #4a3728;
+            cursor: pointer;
+        }
+
+        #color-caramel {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #65350f;
+            cursor: pointer;
+        }
+
+        #color-ivory {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #fffff0;
+            cursor: pointer;
+        }
+ 
+        #color-floral-white {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #fff9ed;
+            cursor: pointer;
+        }
+
+        #color-sky {
+            display: inline-flex;
+            height: 16px;
+            width: 16px;
+            border: .1em solid white;
+            border-radius: 2.5px;
+            background-color: #63c5da;
+            cursor: pointer;
+        }
+
+        .ribbon-tooltip {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            --bs-tooltip-color: rgb(61, 61, 61);
+            --bs-tooltip-bg: #fff9ed;
+        }
+
+        .regular {
+            display: block;
+        }
+
+        .alt {
+            display: none;
+        }
+
+        /* #9cbfff soft blue */
+        /* #ab69db purple */
+        /* #f3cd50 gold */
+        /* #eb5b4f soft red */
+
+        /* https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard */
+        /* https://www.cusd200.org/cms/lib7/IL01001538/Centricity/Domain/1193/Character%20Traits%20Definition%20Sheet.pdf */
     </style>
 
     </head>
 <body>
 
-    <div class="container">
-        <div class="d-flex flex-column flex-md-row flex-wrap">
-            <img src="assets/img/2.png" alt="" class="img-fluid w-25">
+    <div class="container mont">
+        <div class="d-flex align-items-center justify-content-center">
+            <a href="/"><button class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button></a>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row flex-wrap my-5">
+            <div class="col-12 col-lg-4 p-2">
+                <img src="assets/img/2.png" alt="" class="img-fluid rounded border border-dark border-5">
+            </div>
             
             <!-- Character -->
-            <div class="d-flex flex-column w-50 flex-wrap">
-                <div class="d-flex">
-                    <div class="d-flex flex-column w-75">
-                        <h5>Myndi</h5>
-                        <span>Formerly elf, 21 years old, 161cm/5'3''</span>
-                        <span>Attends school & studies Nano-robotics</span>
-                    </div>
-                    <div class="d-flex justify-content-center align-items-center w-25">
-                        <button class="alt-version" type="button">Alt version</button>
+            <div class="p-2 col-12 col-lg-8 d-flex flex-column flex-wrap info-box">
+                <div class="d-flex bg-dark rounded text-white p-3 border border-3 mb-1">
+                    <div class="d-flex flex-column">
+                        <h4 class="fs-2">Myndi <span class="fs-6 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h4>
+                        <hr class="w-25 m-0 mb-2">
+                        <span><i class="fa-solid fa-address-card fa-sm" style="color: white;"></i> Formerly elf, 21 years old, 161cm/5'3''</span>
+                        <span><i class="fa-solid fa-graduation-cap fa-sm" style="color: #ab69db;"></i> Attends school & studies Advanced Nano-ryobotics</span>
                     </div>
                 </div>
+                <div class="d-flex flex-column">
+                    <div class="d-inline-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-3 order-0">
+                        <h5 class="fs-4">Colors <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
+                        <hr class="w-25 m-0 mb-2">
+                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i> Clothing:</span> <span class="me-1">Garnet</span> <span id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span>  <span class="me-1">Cedar</span> <span id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span><span class="me-1">Caramel</span> <span id="color-caramel" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
+                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-scissors" style="color: #f3cd50;"></i> Hair:</span> <span class="me-1">Ivory</span> <span id="color-ivory" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span> <span class="mx-1">or</span> <span class="me-1">Floral White</span> <span id="color-floral-white" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
+                        <p class="m-0 p-0 d-flex align-items-center"><span class="fw-bold me-1"><i class="fa-solid fa-eye" style="color: #9cbfff;"></i> Eyes:</span> <span class="me-1">Sky</span> <span id="color-sky" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
+                        <button class="d-none button">Color Value</button>
+                    </div>
 
-                <hr>
-                <div id="myndi-regular" class="d-flex flex-column">
-                    <span>Main color(s):</span>
-                    <span>Hair color:</span>
+                    <!-- Switch button -->
+                    <div class="d-flex justify-content-center order-2">
+                        <button class="alt-version text-white mb-2 switch">Switch</button>
+                    </div>
 
-                    <hr>
+                    <!-- Regular title -->
+                    <div class="regular order-1">
+                        <div class="d-flex align-items-center">
+                            <hr class="w-25 ms-auto">
+                            <h5 class="mx-2 mont fs-5 fw-light">Regular version</h5>
+                            <hr class="w-25 me-auto">
+                        </div>
+                    </div>
 
-                    <p>Traits:</p>
-                    <ul>
-                        <li>Lovely, charming, etc.</li>
-                    </ul>
+                    <!-- Alt title -->
+                    <div class="alt order-1">
+                        <div class="d-flex align-items-center">
+                            <hr class="w-25 ms-auto">
+                            <h5 class="mx-2 mont fs-5 fw-light">Alt version</h5>
+                            <hr class="w-25 me-auto">
+                        </div>
+                    </div>
 
-                    <hr>
-
-                    <p>Likings:</p>
-                    <ul>
-                        <li> Dressing:
+                    <!-- Regular traits + preferences -->
+                    <div class="regular order-3">
+                        <div class="d-flex flex-column order-3">
+                            <div class="d-flex bg-dark rounded text-white p-3 border border-3">
+                                <div class="col-12 col-lg-4">
+                                    <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                    <hr class="w-75 m-0 mb-2">
+                                    <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1"> 姫様</span></h5>
+                                    <ul>
+                                        <li>Affectionate</li>
+                                        <li>Anxious</li>
+                                        <li>Caring</li>
+                                        <li>Cowardly</li>
+                                        <li>Intelligent</li>
+                                        <li>Logical</li>
+                                        <li>Lonely</li>
+                                        <li>Sincere</li>
+                                        <li>Sensitive</li>
+                                        <li>Timid</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-8 d-none d-lg-flex">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="rounded w-100 border border-1 border-white" style="object-fit: cover; object-position: 80% 25%;">
+                                </div>
+                            </div>
+                            <hr>
+                            <p>Likings:</p>
                             <ul>
-                                <li>ba</li>
-                                <li>b</li>
-                                <li>d</li>
+                                <li> Dressing:
+                                    <ul>
+                                        <li>ba</li>
+                                        <li>b</li>
+                                        <li>d</li>
+                                    </ul>
+                                </li>
+                                <li>People:</li>
+                                <li>Other:</li>
                             </ul>
-                        </li>
-                        <li>People:</li>
-                        <li>Other:</li>
-                    </ul>
-                </div>
-                <div id="myndi-alt" class="d-flex flex-column">
+                        </div>
+                    </div>
 
+                    <!-- Alt trais + preferences -->
+                    <div class="alt order-3">
+                        <div class="d-flex flex-column order-3">
+                            <div class="d-flex bg-dark rounded text-white p-3 border border-3">
+                                <div class="col-12 col-lg-4">
+                                    <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                    <hr class="w-75 m-0 mb-2">
+                                    <h5 class="fs-5">Kuudere<span class="fs-6 text-secondary ms-1"> クーデレ</span></h5>
+                                    <ul>
+                                        <li>Affectionate</li>
+                                        <li>Anxious</li>
+                                        <li>Caring</li>
+                                        <li>Cowardly</li>
+                                        <li>Intelligent</li>
+                                        <li>Logical</li>
+                                        <li>Lonely</li>
+                                        <li>Sincere</li>
+                                        <li>Sensitive</li>
+                                        <li>Timid</li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-8 d-none d-lg-flex">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="" class="rounded w-100 border border-1 border-white" style="object-fit: cover; object-position: 80% 25%;">
+                                </div>
+                            </div>
+                            <hr>
+                            <p>Likings:</p>
+                            <ul>
+                                <li> Dressing:
+                                    <ul>
+                                        <li>ba</li>
+                                        <li>b</li>
+                                        <li>d</li>
+                                    </ul>
+                                </li>
+                                <li>People:</li>
+                                <li>Other:</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Colors -->
-            <div class="d-flex flex-column w-50">
+            <div class="d-flex flex-column">
 
             </div>
         </div>
