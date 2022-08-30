@@ -50,10 +50,11 @@
     <style>
 
         body {
-            background-image: url('/assets/img/bg/pexels-joão-jesus-925743.jpg');
+            background-image: url('/assets/img/bg/1415612773360.jpg');
             background-position: center;
-            background-size: 100% 100%;
+            background-size: auto;
             background-repeat: no-repeat;
+
             background-attachment: fixed;
             position: relative;
         }
@@ -63,7 +64,7 @@
             font-size: 0.7rem;
             text-transform: uppercase;
 
-            background-color: #e45144;
+            background-color: #6785df;
 
             border: 0.25em solid #fffaf9;
             border-radius: .25em;
@@ -75,10 +76,10 @@
 
         .alt-version:active {
             opacity: 1;
-            background-color: rgb(220, 78, 78);
-            border: 0.25em solid rgb(220, 78, 78);
+            background-color: #3453b2;
+            border: 0.25em solid #bcc9ef;
             color: white;
-            box-shadow: 0px 0px 1px 3px #ff948b;
+            box-shadow: 0px 0px 1px 3px #bfc3d0ab;
         }
 
         .mont {
@@ -176,6 +177,9 @@
             position: relative;
             isolation: isolate;
             overflow: hidden;
+
+            outline: .15em solid white;
+            outline-offset: -.3em;
         }
 
         .bg-low-op-dark::after {
@@ -184,7 +188,12 @@
             z-index: -1;
             inset: 0;
             background-color: rgb(0, 0, 0);
-            opacity: 0.65;
+            opacity: 0.60;
+        }
+
+        .img-outline {
+            outline: .15em solid #00000061;
+            outline-offset: -.25em;
         }
 
         /* #9cbfff soft blue */
@@ -197,16 +206,16 @@
 <body>
 
     <div class="container mont">
-        <div class="d-flex align-items-center justify-content-center mt-3 rounded-circle">
-            <a href="/" class=""><button class="btn btn-dark px-4 rounded-pill border border-3"><i class="fa-solid fa-arrow-left"></i></button></a>
+        <div class="d-flex align-items-center justify-content-center mt-4 rounded-circle">
+            <a href="/" class=""><button class="btn btn-outline-light py-1 px-4"><i class="fa-solid fa-arrow-left"></i></button></a>
         </div>
 
         <div class="d-flex flex-column flex-md-row flex-wrap my-3">
             <div class="col-12 col-lg-4 p-2">
-                <img src="assets/img/2.png" alt="" class="img-fluid rounded border border-3 mb-3">
-                <figure class="text-center text-white bg-low-op-dark px-1">
+                <img src="assets/img/2.png" alt="" class="img-fluid mb-3 img-outline">
+                <figure class="text-center text-white bg-low-op-dark px-2 pt-2">
                     <blockquote class="blockquote">
-                      <p>"Knowledge often kills more people than ignorance does, making it a mischievous dilemma."</p>
+                      <p>"Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."</p>
                     </blockquote>
                     <figcaption class="blockquote-footer">
                         Myndi Bonart
@@ -216,7 +225,7 @@
             
             <!-- Character -->
             <div class="p-2 col-12 col-lg-8 d-flex flex-column flex-wrap info-box">
-                <div class="d-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-1">
+                <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3">
                     <div class="d-flex flex-column">
                         <h4 class="fs-2">Myndi <span class="fs-6 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h4>
                         <hr class="w-25 m-0 mb-2">
@@ -225,12 +234,12 @@
                     </div>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="d-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-3 order-0">
-                        <h5 class="fs-4">Colors <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
+                    <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3 order-0">
+                        <h5 class="fs-4">Color Palette <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
                         <hr class="w-25 m-0 mb-2">
-                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i> Clothing:</span> <span class="me-1">Garnet</span> <span id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span>  <span class="me-1">Cedar</span> <span id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span><span class="me-1">Caramel</span> <span id="color-caramel" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
-                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-scissors" style="color: #f3cd50;"></i> Hair:</span> <span class="me-1">Ivory</span> <span id="color-ivory" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span> <span class="mx-1">or</span> <span class="me-1">Floral White</span> <span id="color-floral-white" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
-                        <p class="m-0 p-0 d-flex align-items-center"><span class="fw-bold me-1"><i class="fa-solid fa-eye" style="color: #9cbfff;"></i> Eyes:</span> <span class="me-1">Sky</span> <span id="color-sky" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
+                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i> Clothing:</span> <span class="me-1">Garnet</span> <span id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span>  <span class="me-1">Cedar</span> <span id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span><span class="me-1">Caramel</span> <span id="color-caramel" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
+                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-scissors" style="color: #f3cd50;"></i> Hair:</span> <span class="me-1">Ivory</span> <span id="color-ivory" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span> <span class="mx-1">or</span> <span class="me-1">Floral White</span> <span id="color-floral-white" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
+                        <p class="m-0 p-0 d-flex align-items-center"><span class="fw-bold me-1"><i class="fa-solid fa-eye" style="color: #9cbfff;"></i> Eyes:</span> <span class="me-1">Sky</span> <span id="color-sky" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
                         <button class="d-none button">Color Value</button>
                     </div>
 
@@ -242,29 +251,29 @@
                     <!-- Regular title -->
                     <div class="regular order-1 mb-2">
                         <div class="d-flex align-items-center">
-                            <hr class="w-25 ms-auto">
-                            <div class="border bg-low-op-dark mx-1 rounded-pill border border-3 px-3 py-1">
+                            <hr class="w-25 ms-auto border-white">
+                            <div class="mx-1 px-3 py-1">
                                 <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Regular version</h5>
                             </div>
-                            <hr class="w-25 me-auto">
+                            <hr class="w-25 me-auto border-white">
                         </div>
                     </div>
 
                     <!-- Alt title -->
                     <div class="alt order-1 mb-2">
                         <div class="d-flex align-items-center">
-                            <hr class="w-25 ms-auto">
-                            <div class="border bg-low-op-dark mx-1 rounded-pill border border-3 px-3 py-1">
+                            <hr class="w-25 ms-auto border-white">
+                            <div class="mx-1 px-3 py-1">
                                 <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Alt version</h5>
                             </div>
-                            <hr class="w-25 me-auto">
+                            <hr class="w-25 me-auto border-white">
                         </div>
                     </div>
 
                     <!-- Regular traits + preferences -->
                     <div class="regular order-3">
                         <div class="d-flex flex-column order-3">
-                            <div class="d-flex bg-dark rounded text-white p-3 border border-3">
+                            <div class="d-flex bg-low-op-dark text-white p-3">
                                 <div class="col-12 col-lg-4">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
                                     <div class="col-4 col-lg-12">
@@ -309,7 +318,7 @@
                     <!-- Alt trais + preferences -->
                     <div class="alt order-3">
                         <div class="d-flex flex-column order-3">
-                            <div class="d-flex bg-dark rounded text-white p-3 border border-3 flex-wrap">
+                            <div class="d-flex bg-low-op-dark text-white p-3 flex-wrap">
                                 <div class="col-12 col-lg-4 d-flex flex-column">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
                                     <div class="col-4 col-lg-12">
