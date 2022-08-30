@@ -49,6 +49,15 @@
 
     <style>
 
+        body {
+            background-image: url('/assets/img/bg/pexels-joão-jesus-925743.jpg');
+            background-position: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
         .alt-version {
             padding: 0.25em 1.5em;
             font-size: 0.7rem;
@@ -56,8 +65,8 @@
 
             background-color: #e45144;
 
-            border: 0.25em solid #ff948b;
-            border-radius: .15em;
+            border: 0.25em solid #fffaf9;
+            border-radius: .25em;
         }
 
         .alt-version:hover {
@@ -148,6 +157,7 @@
             font-weight: 500;
             --bs-tooltip-color: rgb(61, 61, 61);
             --bs-tooltip-bg: #fff9ed;
+            letter-spacing: 0.5px;
         }
 
         .regular {
@@ -158,40 +168,64 @@
             display: none;
         }
 
+        .container {
+            background-color: transparent;
+        }
+
+        .bg-low-op-dark {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .bg-low-op-dark::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.65;
+        }
+
         /* #9cbfff soft blue */
         /* #ab69db purple */
         /* #f3cd50 gold */
         /* #eb5b4f soft red */
-
-        /* https://stackoverflow.com/questions/22581345/click-button-copy-to-clipboard */
-        /* https://www.cusd200.org/cms/lib7/IL01001538/Centricity/Domain/1193/Character%20Traits%20Definition%20Sheet.pdf */
     </style>
 
     </head>
 <body>
 
     <div class="container mont">
-        <div class="d-flex align-items-center justify-content-center">
-            <a href="/"><button class="btn btn-primary"><i class="fa-solid fa-arrow-left"></i></button></a>
+        <div class="d-flex align-items-center justify-content-center mt-3 rounded-circle">
+            <a href="/" class=""><button class="btn btn-dark px-4 rounded-pill border border-3"><i class="fa-solid fa-arrow-left"></i></button></a>
         </div>
 
-        <div class="d-flex flex-column flex-md-row flex-wrap my-5">
+        <div class="d-flex flex-column flex-md-row flex-wrap my-3">
             <div class="col-12 col-lg-4 p-2">
-                <img src="assets/img/2.png" alt="" class="img-fluid rounded border border-dark border-5">
+                <img src="assets/img/2.png" alt="" class="img-fluid rounded border border-3 mb-3">
+                <figure class="text-center text-white bg-low-op-dark px-1">
+                    <blockquote class="blockquote">
+                      <p>"Knowledge often kills more people than ignorance does, making it a mischievous dilemma."</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        Myndi Bonart
+                    </figcaption>
+                  </figure>
             </div>
             
             <!-- Character -->
             <div class="p-2 col-12 col-lg-8 d-flex flex-column flex-wrap info-box">
-                <div class="d-flex bg-dark rounded text-white p-3 border border-3 mb-1">
+                <div class="d-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-1">
                     <div class="d-flex flex-column">
                         <h4 class="fs-2">Myndi <span class="fs-6 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h4>
                         <hr class="w-25 m-0 mb-2">
                         <span><i class="fa-solid fa-address-card fa-sm" style="color: white;"></i> Formerly elf, 21 years old, 161cm/5'3''</span>
-                        <span><i class="fa-solid fa-graduation-cap fa-sm" style="color: #ab69db;"></i> Attends school & studies Advanced Nano-ryobotics</span>
+                        <span><i class="fa-solid fa-graduation-cap fa-sm" style="color: #ab69db;"></i> Attends school & studies Advanced Nano-robotics</span>
                     </div>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="d-inline-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-3 order-0">
+                    <div class="d-flex flex-column bg-dark rounded text-white p-3 border border-3 mb-3 order-0">
                         <h5 class="fs-4">Colors <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
                         <hr class="w-25 m-0 mb-2">
                         <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i> Clothing:</span> <span class="me-1">Garnet</span> <span id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span>  <span class="me-1">Cedar</span> <span id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span><span class="me-1">Caramel</span> <span id="color-caramel" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Copy to clipboard!"></span></p>
@@ -206,19 +240,23 @@
                     </div>
 
                     <!-- Regular title -->
-                    <div class="regular order-1">
+                    <div class="regular order-1 mb-2">
                         <div class="d-flex align-items-center">
                             <hr class="w-25 ms-auto">
-                            <h5 class="mx-2 mont fs-5 fw-light">Regular version</h5>
+                            <div class="border bg-low-op-dark mx-1 rounded-pill border border-3 px-3 py-1">
+                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Regular version</h5>
+                            </div>
                             <hr class="w-25 me-auto">
                         </div>
                     </div>
 
                     <!-- Alt title -->
-                    <div class="alt order-1">
+                    <div class="alt order-1 mb-2">
                         <div class="d-flex align-items-center">
                             <hr class="w-25 ms-auto">
-                            <h5 class="mx-2 mont fs-5 fw-light">Alt version</h5>
+                            <div class="border bg-low-op-dark mx-1 rounded-pill border border-3 px-3 py-1">
+                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Alt version</h5>
+                            </div>
                             <hr class="w-25 me-auto">
                         </div>
                     </div>
@@ -229,7 +267,9 @@
                             <div class="d-flex bg-dark rounded text-white p-3 border border-3">
                                 <div class="col-12 col-lg-4">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
-                                    <hr class="w-75 m-0 mb-2">
+                                    <div class="col-4 col-lg-12">
+                                        <hr class="w-75 m-0 mb-2">
+                                    </div>
                                     <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1"> 姫様</span></h5>
                                     <ul>
                                         <li>Affectionate</li>
@@ -244,49 +284,52 @@
                                         <li>Timid</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-8 d-none d-lg-flex">
-                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="rounded w-100 border border-1 border-white" style="object-fit: cover; object-position: 80% 25%;">
+                                <div class="col-lg-8">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="rounded w-100 border border-1 border-white d-none d-lg-flex" style="object-fit: cover; object-position: 80% 25%;">
                                 </div>
                             </div>
                             <hr>
-                            <p>Likings:</p>
-                            <ul>
-                                <li> Dressing:
-                                    <ul>
-                                        <li>ba</li>
-                                        <li>b</li>
-                                        <li>d</li>
-                                    </ul>
-                                </li>
-                                <li>People:</li>
-                                <li>Other:</li>
-                            </ul>
+                            <div class="d-flex flex-column bg-dark rounded text-white p-3 border border-3">
+                                <h5 class="fs-4">Preferences<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                <ul>
+                                    <li> Dressing:
+                                        <ul>
+                                            <li>ba</li>
+                                            <li>b</li>
+                                            <li>d</li>
+                                        </ul>
+                                    </li>
+                                    <li>People:</li>
+                                    <li>Other:</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Alt trais + preferences -->
                     <div class="alt order-3">
                         <div class="d-flex flex-column order-3">
-                            <div class="d-flex bg-dark rounded text-white p-3 border border-3">
-                                <div class="col-12 col-lg-4">
+                            <div class="d-flex bg-dark rounded text-white p-3 border border-3 flex-wrap">
+                                <div class="col-12 col-lg-4 d-flex flex-column">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
-                                    <hr class="w-75 m-0 mb-2">
+                                    <div class="col-4 col-lg-12">
+                                        <hr class="w-75 m-0 mb-2">
+                                    </div>
                                     <h5 class="fs-5">Kuudere<span class="fs-6 text-secondary ms-1"> クーデレ</span></h5>
                                     <ul>
-                                        <li>Affectionate</li>
-                                        <li>Anxious</li>
-                                        <li>Caring</li>
-                                        <li>Cowardly</li>
-                                        <li>Intelligent</li>
-                                        <li>Logical</li>
-                                        <li>Lonely</li>
-                                        <li>Sincere</li>
-                                        <li>Sensitive</li>
-                                        <li>Timid</li>
+                                        <li>Bossy</li>
+                                        <li>Bully</li>
+                                        <li>Clever</li>
+                                        <li>Competitive</li>
+                                        <li>Daring</li>
+                                        <li>Impolite</li>
+                                        <li>Mean</li>
+                                        <li>Picky</li>
+                                        <li>Restless</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-8 d-none d-lg-flex">
-                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="" class="rounded w-100 border border-1 border-white" style="object-fit: cover; object-position: 80% 25%;">
+                                <div class="col-lg-8">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="" class="rounded w-100 border border-1 border-white d-none d-lg-flex" style="object-fit: cover; object-position: 80% 25%;">
                                 </div>
                             </div>
                             <hr>
