@@ -191,9 +191,52 @@
             opacity: 0.60;
         }
 
+        .bg-low-op-caption {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .bg-low-op-caption::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background-color: rgb(0, 0, 0);
+            opacity: 0.60;
+        }
+
         .img-outline {
             outline: .15em solid #00000061;
             outline-offset: -.25em;
+        }
+
+        .img-outline2 {
+            position: relative;
+            outline: .15em solid white;
+            outline-offset: .25em;
+        }
+
+        .img-outline2::after {
+            content: '';
+            z-index: 3;
+            position: absolute;
+            outline: .15em solid black;
+            outline-offset: -.25em;
+        }
+
+        * {
+            /* outline: 1px solid red; */
+        }
+
+        figure {
+            position: absolute;
+            top: -10em;
+            width: 100%;
+        }
+
+        .main-page:hover {
+            opacity: 0.8;
         }
 
         /* #9cbfff soft blue */
@@ -206,31 +249,54 @@
 <body>
 
     <div class="container mont">
-        <div class="d-flex align-items-center justify-content-center mt-4 rounded-circle">
-            <a href="/" class=""><button class="btn btn-outline-light py-1 px-4"><i class="fa-solid fa-arrow-left"></i></button></a>
+
+        <!-- Button -->
+        <div class="d-flex align-items-center justify-content-center mt-4">
+            <hr class="w-25 ms-auto border-white">
+            <div class="d-flex flex-column align-items-center justify-content-center position-relative main-page">
+                <p class="text-white m-0">Main Page</p>
+                <a href="/" class="stretched-link"><button class="py-1 px-4 mx-3 text-decoration-none bg-transparent border-0"><i class="fa-solid fa-arrow-left text-white fa-xl"></i></button></a>
+            </div>
+            <hr class="w-25 me-auto border-white">
         </div>
 
-        <div class="d-flex flex-column flex-md-row flex-wrap my-3">
-            <div class="col-12 col-lg-4 p-2">
-                <img src="assets/img/2.png" alt="" class="img-fluid mb-3 img-outline">
-                <figure class="text-center text-white bg-low-op-dark px-2 pt-2">
-                    <blockquote class="blockquote">
-                      <p>"Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."</p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        Myndi Bonart
-                    </figcaption>
-                  </figure>
+        <!-- Alert -->
+        <div class="d-flex w-100 justify-content-center px-2">
+            <div class="alert alert-primary alert-dismissible fade show mt-3 col-12" role="alert">
+                <strong>Thank you for visitng my page!</strong> The purpose of this webpage is merely to showcase my original characters. If you would like something similar for yourself, don't hesitate on contacting me!
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+
+        <!-- Wrapper for content -->
+        <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-evenly">
+
+            <!-- Image column -->
+            <div class="col-12 col-lg-4">
+                <div class="p-2 position-relative">
+                    <img src="assets/img/2.png" alt="" class="img-fluid img-outline">
+                    <figure class="text-center text-white bg-low-op-caption px-2 pt-1">
+                        <blockquote class="blockquote">
+                          <p class="fw-lighter small fs-6">"Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."</p>
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                            Myndi Bonart
+                        </figcaption>
+                      </figure>
+                </div>
             </div>
             
-            <!-- Character -->
-            <div class="p-2 col-12 col-lg-8 d-flex flex-column flex-wrap info-box">
+            <!-- Character column -->
+            <div class="p-2 col-12 col-lg-8 d-flex flex-column info-box">
+
                 <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3">
                     <div class="d-flex flex-column">
                         <h4 class="fs-2">Myndi <span class="fs-6 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h4>
                         <hr class="w-25 m-0 mb-2">
                         <span><i class="fa-solid fa-address-card fa-sm" style="color: white;"></i> Formerly elf, 21 years old, 161cm/5'3''</span>
                         <span><i class="fa-solid fa-graduation-cap fa-sm" style="color: #ab69db;"></i> Attends school & studies Advanced Nano-robotics</span>
+                        <p class="m-0 p-0">Myndi is 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ligula quis leo convallis finibus. Aliquam porta porta lacinia. Aliquam quis diam est. Morbi dictum condimentum lectus, id mollis magna placerat et. Vivamus nec fringilla tortor. Nullam facilisis consequat ante eget placerat. Nam fringilla bibendum leo, sed auctor arcu facilisis vel. Praesent mattis ex arcu, vitae blandit turpis dapibus vitae. Integer a pretium nisi. Cras magna metus, ornare et hendrerit eu, convallis id quam. Phasellus egestas neque et quam aliquam fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Nulla vel euismod lorem. Cras sem urna, venenatis quis elit eu, suscipit blandit odio. Pellentesque feugiat viverra aliquet.</p>
                     </div>
                 </div>
                 <div class="d-flex flex-column">
@@ -253,7 +319,7 @@
                         <div class="d-flex align-items-center">
                             <hr class="w-25 ms-auto border-white">
                             <div class="mx-1 px-3 py-1">
-                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Regular version</h5>
+                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0 text-center">Regular version</h5>
                             </div>
                             <hr class="w-25 me-auto border-white">
                         </div>
@@ -264,7 +330,7 @@
                         <div class="d-flex align-items-center">
                             <hr class="w-25 ms-auto border-white">
                             <div class="mx-1 px-3 py-1">
-                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0">Alt version</h5>
+                                <h5 class="mx-2 mont fs-5 fw-light text-white p-0 m-0 text-center">Alt version</h5>
                             </div>
                             <hr class="w-25 me-auto border-white">
                         </div>
@@ -272,14 +338,14 @@
 
                     <!-- Regular traits + preferences -->
                     <div class="regular order-3">
-                        <div class="d-flex flex-column order-3">
-                            <div class="d-flex bg-low-op-dark text-white p-3">
-                                <div class="col-12 col-lg-4">
+                        <div class="d-flex flex-column">
+                            <div class="d-flex bg-low-op-dark text-white p-3 flex-wrap">
+                                <div class="col-5 col-sm-4">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
                                     <div class="col-4 col-lg-12">
                                         <hr class="w-75 m-0 mb-2">
                                     </div>
-                                    <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1"> 姫様</span></h5>
+                                        <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> 姫様</span></h5>
                                     <ul>
                                         <li>Affectionate</li>
                                         <li>Anxious</li>
@@ -293,8 +359,9 @@
                                         <li>Timid</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-8">
-                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="rounded w-100 border border-1 border-white d-none d-lg-flex" style="object-fit: cover; object-position: 80% 25%;">
+                                <div class="col-7 col-sm-8 d-flex align-items-center justify-content-center px-1 px-lg-3">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="img-fluid d-none d-md-block img-outline2" style="object-fit: cover; object-position: 80% 25%;">
+                                    <img src="assets/img/rounded-img/tinywow_CM_4992789.png" alt="Myndi sakura flower" class="d-block d-md-none w-100">
                                 </div>
                             </div>
                             <hr>
@@ -317,14 +384,14 @@
 
                     <!-- Alt trais + preferences -->
                     <div class="alt order-3">
-                        <div class="d-flex flex-column order-3">
+                        <div class="d-flex flex-column">
                             <div class="d-flex bg-low-op-dark text-white p-3 flex-wrap">
-                                <div class="col-12 col-lg-4 d-flex flex-column">
+                                <div class="col-5 col-sm-4 d-flex flex-column">
                                     <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
                                     <div class="col-4 col-lg-12">
                                         <hr class="w-75 m-0 mb-2">
                                     </div>
-                                    <h5 class="fs-5">Kuudere<span class="fs-6 text-secondary ms-1"> クーデレ</span></h5>
+                                        <h5 class="fs-5">Kuudere <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> クーデレ</span></h5>
                                     <ul>
                                         <li>Bossy</li>
                                         <li>Bully</li>
@@ -337,8 +404,9 @@
                                         <li>Restless</li>
                                     </ul>
                                 </div>
-                                <div class="col-lg-8">
-                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="" class="rounded w-100 border border-1 border-white d-none d-lg-flex" style="object-fit: cover; object-position: 80% 25%;">
+                                <div class="col-7 col-sm-8 d-flex justify-content-center align-items-center px-1 px-lg-3">
+                                    <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="Myndi in the beach" class="img-fluid d-none d-md-block img-outline2" style="object-fit: cover; object-position: 80% 25%;">
+                                    <img src="assets/img/rounded-img/tinywow_myn1_4992684.png" alt="Myndi in the beach" class="w-100 d-block d-md-none">
                                 </div>
                             </div>
                             <hr>
@@ -357,11 +425,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Colors -->
-            <div class="d-flex flex-column">
-
             </div>
         </div>
     </div>
