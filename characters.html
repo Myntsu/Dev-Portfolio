@@ -169,6 +169,10 @@
             display: none;
         }
 
+        .elf {
+            display: none;
+        }
+
         .container {
             background-color: transparent;
         }
@@ -189,6 +193,24 @@
             inset: 0;
             background-color: rgb(0, 0, 0);
             opacity: 0.60;
+        }
+
+        .bg-low-op-white {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+
+            outline: .15em solid rgb(124, 142, 222);
+            outline-offset: -.3em;
+        }
+
+        .bg-low-op-white::after {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background-color: rgb(255, 255, 255);
+            opacity: 0.15;
         }
 
         .bg-low-op-caption {
@@ -231,12 +253,19 @@
 
         figure {
             position: absolute;
-            top: -10em;
+            bottom: 10em;
+            right: 0em;
+            float: none;
             width: 100%;
+            overflow: hidden;
         }
 
         .main-page:hover {
             opacity: 0.8;
+        }
+
+        .link-cyan {
+            color: #46a3ff;
         }
 
         /* #9cbfff soft blue */
@@ -261,9 +290,9 @@
         </div>
 
         <!-- Alert -->
-        <div class="d-flex w-100 justify-content-center px-2">
-            <div class="alert alert-primary alert-dismissible fade show mt-3 col-12" role="alert">
-                <strong>Thank you for visitng my page!</strong> The purpose of this webpage is merely to showcase my original characters. If you would like something similar for yourself, don't hesitate on contacting me!
+        <div class="d-flex justify-content-center px-2">
+            <div class="alert alert-primary alert-dismissible fade show mt-3 col-12" role="alert" style="width: 95%;">
+                <i class="fa-solid fa-circle-info fa-xl"></i> <strong>Thank you for visitng my page!</strong> The purpose of this webpage is merely to showcase my original characters. If you would like something similar for yourself, don't hesitate on contacting me! <i class="fa-brands fa-discord"></i> Myndi#5041
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         </div>
@@ -271,43 +300,144 @@
         <!-- Wrapper for content -->
         <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-evenly">
 
-            <!-- Image column -->
+            <!-- Image and information column -->
             <div class="col-12 col-lg-4">
-                <div class="p-2 position-relative">
-                    <img src="assets/img/2.png" alt="" class="img-fluid img-outline">
+
+                <!-- Name -->
+                <div class="text-light text-center bg-low-op-caption rounded-top">
+                    <h1 class="m-0 p-0 p-2">Myndi <span class="fs-2 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h1>
+                </div>
+
+                <!-- Image -->
+                <div class="position-relative">
+                    <img src="assets/img/2.png" alt="" class="img-fluid img-outline" >
                     <figure class="text-center text-white bg-low-op-caption px-2 pt-1">
                         <blockquote class="blockquote">
-                          <p class="fw-lighter small fs-6">"Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."</p>
+                            <p class="fw-lighter small fs-6">
+                                "Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."
+                            </p>
                         </blockquote>
                         <figcaption class="blockquote-footer">
                             Myndi Bonart
                         </figcaption>
-                      </figure>
+                        </figure>
+                </div>
+
+                <!-- Personal information -->
+                <div class="d-flex flex-column bg-low-op-white text-white p-3 mb-1">
+                    <h5 class="fs-4">Information <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> ユーザー情報</span></h5>
+                    <hr class="w-25 m-0 mb-2">
+                    <!-- Age -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-address-card" style="color: #ffffff;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Age:</span> 
+                        <span>21 years old</span>
+                    </div>
+                    <!-- Birthday -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-cake-candles" style="color: #F08080;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Birthday:</span>
+                        <span>24 / June / 2166</span>
+                    </div>
+                    <!-- Height -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-ruler" style="color: #FFE4B5;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Height:</span> 
+                        <span>161cm / 5'3''</span>
+                    </div>
+                    <!-- Family -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                        <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid fa-people-group" style="color: #FFA07A;"></i></span>
+                        <span class="fw-bold me-1 align-self-start" style="width: 6em;"> Family:</span>
+                        <div class="d-flex flex-column">
+                            <span><i class="fa-solid fa-paw text-white me-1"></i><a href="" class="text-decoration-none link-cyan text-decoration-underline">Smytsu</a></span>
+                            <span><i class="fa-solid fa-bowl-rice text-white me-1"></i><a href="" class="text-decoration-none link-cyan text-decoration-underline">Astrid</a></span>
+                            <span><i class="fa-brands fa-firefox text-white me-1"></i><a href="" class="text-decoration-none link-cyan text-decoration-underline">Nysha</a></span>
+                        </div>
+                    </div>
+                    <!-- Ethnicity -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-dna" style="color: #AEF6C7;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Ethnicity:</span>
+                        <span>Elven ⌯ Mutation 124</span>
+                    </div>
+                    <!-- Education -->
+                    <div class="m-0 p-0 d-flex align-items-center flex-wrap" style="word-break: keep-all;">
+                        <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid fa-graduation-cap" style="color: #7B68EE;"></i></span>
+                        <span class="fw-bold me-1 align-self-start" style="width: 6em;"> Education:</span>
+                        <div class="col">
+                            <p class="m-0 p-0">Studying Nano-robotics & Human Creation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Palette -->
+                <div class="d-flex flex-column bg-low-op-white text-white p-3 mb-1">
+                    <h5 class="fs-4">Color Palette <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
+                    <hr class="w-25 m-0 mb-2">
+
+                    <!-- Clothing -->
+                    <div class="d-flex flex-column">
+                        <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                            <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i></span>
+                            <span class="fw-bold me-1 align-self-start" style="width: 6em;"> Clothing:</span>
+                            <!-- Colors  -->
+                            <div class="d-flex flex-column">
+                                <div class="d-flex align-items-center mb-1">
+                                    <div id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Garnet</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Cedar</span> 
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div id="color-caramel" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Caramel</span> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hair -->
+                    <div class="d-flex flex-column">
+                        <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                            <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid fa-scissors" style="color: #f3cd50;"></i></span>
+                            <span class="fw-bold me-1 align-self-start" style="width: 6em;"> Hair:</span>
+                            <!-- Colors -->
+                            <div class="d-flex flex-column">
+                                <div class="d-flex align-items-center mb-1">
+                                    <div id="color-ivory" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Ivory</span>
+                                </div>
+                                <div class="d-flex align-items-center mb-1">
+                                    <div id="color-floral-white" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Floral White</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Eyes -->
+                    <div class="m-0 p-0 d-flex align-items-center">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-eye" style="color: #9cbfff;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Eyes:</span>
+                        <!-- Colors -->
+                        <div class="d-flex align-items-center mb-1">
+                            <div id="color-sky" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span class="me-1">Sky</span>
+                        </div>
+                    </div>
+                    <button class="d-none button">Color Value</button>
                 </div>
             </div>
             
             <!-- Character column -->
-            <div class="p-2 col-12 col-lg-8 d-flex flex-column info-box">
+            <div class="col-12 col-lg-8 d-flex flex-column info-box">
 
                 <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3">
                     <div class="d-flex flex-column">
-                        <h4 class="fs-2">Myndi <span class="fs-6 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h4>
+                        <h4 class="fs-4">History <span class="fs-6 text-secondary">歴史</span></h4>
                         <hr class="w-25 m-0 mb-2">
-                        <span><i class="fa-solid fa-address-card fa-sm" style="color: white;"></i> Formerly elf, 21 years old, 161cm/5'3''</span>
-                        <span><i class="fa-solid fa-graduation-cap fa-sm" style="color: #ab69db;"></i> Attends school & studies Advanced Nano-robotics</span>
                         <p class="m-0 p-0">Myndi is 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ligula quis leo convallis finibus. Aliquam porta porta lacinia. Aliquam quis diam est. Morbi dictum condimentum lectus, id mollis magna placerat et. Vivamus nec fringilla tortor. Nullam facilisis consequat ante eget placerat. Nam fringilla bibendum leo, sed auctor arcu facilisis vel. Praesent mattis ex arcu, vitae blandit turpis dapibus vitae. Integer a pretium nisi. Cras magna metus, ornare et hendrerit eu, convallis id quam. Phasellus egestas neque et quam aliquam fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Nulla vel euismod lorem. Cras sem urna, venenatis quis elit eu, suscipit blandit odio. Pellentesque feugiat viverra aliquet.</p>
                     </div>
                 </div>
                 <div class="d-flex flex-column">
-                    <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3 order-0">
-                        <h5 class="fs-4">Color Palette <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
-                        <hr class="w-25 m-0 mb-2">
-                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-shirt" style="color: #eb5b4f;"></i> Clothing:</span> <span class="me-1">Garnet</span> <span id="color-garnet" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span>  <span class="me-1">Cedar</span> <span id="color-cedar" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span><span class="me-1">Caramel</span> <span id="color-caramel" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
-                        <p class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap"><span class="fw-bold me-1"><i class="fa-solid fa-scissors" style="color: #f3cd50;"></i> Hair:</span> <span class="me-1">Ivory</span> <span id="color-ivory" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span> <span class="mx-1">or</span> <span class="me-1">Floral White</span> <span id="color-floral-white" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
-                        <p class="m-0 p-0 d-flex align-items-center"><span class="fw-bold me-1"><i class="fa-solid fa-eye" style="color: #9cbfff;"></i> Eyes:</span> <span class="me-1">Sky</span> <span id="color-sky" class="colors" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></span></p>
-                        <button class="d-none button">Color Value</button>
-                    </div>
 
                     <!-- Switch button -->
                     <div class="d-flex justify-content-center order-2">
