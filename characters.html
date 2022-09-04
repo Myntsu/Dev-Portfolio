@@ -49,6 +49,14 @@
 
     <style>
 
+        :root {
+            --light-blue: #cee3ff;
+            --dark-blue: #084298;
+            --pastel-light-blue: #a1c6eb;
+            --pastel-blue: #9cbfff;
+            --pastel-dark-blue: #6785df;
+        }
+
         body {
             background-image: url('/assets/img/bg/1415612773360.jpg');
             background-position: center;
@@ -64,7 +72,7 @@
             font-size: 0.7rem;
             text-transform: uppercase;
 
-            background-color: #6785df;
+            background-color: var(--pastel-dark-blue);
 
             border: 0.25em solid #fffaf9;
             border-radius: .25em;
@@ -152,15 +160,6 @@
             cursor: pointer;
         }
 
-        .ribbon-tooltip {
-            font-family: 'Roboto', sans-serif;
-            font-size: 12px;
-            font-weight: 500;
-            --bs-tooltip-color: rgb(61, 61, 61);
-            --bs-tooltip-bg: #fff9ed;
-            letter-spacing: 0.5px;
-        }
-
         .regular {
             display: block;
         }
@@ -182,7 +181,7 @@
             isolation: isolate;
             overflow: hidden;
 
-            outline: .15em solid white;
+            outline: .15em solid rgba(255, 255, 255, 0.65);
             outline-offset: -.3em;
         }
 
@@ -200,7 +199,7 @@
             isolation: isolate;
             overflow: hidden;
 
-            outline: .15em solid rgb(124, 142, 222);
+            outline: .15em solid rgba(255, 255, 255, 0.65);
             outline-offset: -.3em;
         }
 
@@ -229,22 +228,13 @@
         }
 
         .img-outline {
-            outline: .15em solid #00000061;
+            outline: .15em solid #7b7b7b5c;
             outline-offset: -.25em;
         }
 
         .img-outline2 {
-            position: relative;
             outline: .15em solid white;
             outline-offset: .25em;
-        }
-
-        .img-outline2::after {
-            content: '';
-            z-index: 3;
-            position: absolute;
-            outline: .15em solid black;
-            outline-offset: -.25em;
         }
 
         * {
@@ -256,7 +246,11 @@
         }
 
         .link-cyan {
-            color: #46a3ff;
+            color: var(--pastel-blue);
+        }
+
+        .link-cyan:hover {
+            color: white;
         }
 
         /* #9cbfff soft blue */
@@ -280,14 +274,6 @@
             <hr class="w-25 me-auto border-white">
         </div>
 
-        <!-- Alert -->
-        <div class="d-flex justify-content-center px-2">
-            <div class="alert alert-primary alert-dismissible fade show col-12" role="alert" style="width: 95%;">
-                <i class="fa-solid fa-circle-info fa-xl"></i> <strong>Thank you for visitng my page!</strong> The purpose of this webpage is merely to showcase my original characters. If you would like something similar for yourself, don't hesitate on contacting me! <i class="fa-brands fa-discord"></i> Myndi#5041
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        </div>
-
         <!-- Wrapper for content -->
         <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-evenly">
 
@@ -295,17 +281,17 @@
             <div class="col-12 col-lg-4">
 
                 <!-- Name -->
-                <div class="text-light text-center bg-low-op-caption rounded-top">
-                    <h1 class="m-0 p-0 p-2">Myndi <span class="fs-2 text-secondary">Bonart <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="ribbon-tooltip" data-bs-title="Official symbol">🎀</span></span></h1>
+                <div class="text-center">
+                    
                 </div>
 
                 <!-- Image -->
-                <div class="d-flex position-relative align-items-end mb-2" style="isolation: isolate; min-height: 30rem;">
-                    <img src="assets/img/2.png" alt="" class="img-fluid img-outline position-absolute w-100 h-100" style="z-index: -1;">
+                <div class="d-flex position-relative align-items-end mb-1" style="isolation: isolate; min-height: 30rem;">
+                    <img src="assets/img/2.png" alt="Myndi" class="img-fluid img-outline position-absolute w-100 h-100" style="z-index: -1;">
                     <figure class="text-center text-white bg-low-op-caption px-2 pt-1">
                         <blockquote class="blockquote">
                             <p class="fw-lighter small fs-6">
-                                "Knowledge often kills more people than ignorance does, making it a mischievous dilemma in this era we live in."
+                                "The greatest disease of humanity, is humanity itself."
                             </p>
                         </blockquote>
                         <figcaption class="blockquote-footer">
@@ -318,21 +304,39 @@
                 <div class="d-flex flex-column bg-low-op-white text-white p-3 mb-1">
                     <h5 class="fs-4">Information <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> ユーザー情報</span></h5>
                     <hr class="w-25 m-0 mb-2">
+                    <!-- Name -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                        <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid fa-signature text-white"></i></span>
+                        <span class="fw-bold me-1 align-self-start" style="width: 6em;"> Name:</span> 
+                        <div class="d-flex flex-column">
+                            <span>0144-2093-3 <i class="text-secondary">(former)</i></span>
+                            <span>Myndi Bonart G-75 <i class="text-secondary">(actual)</i></span>
+                        </div>
+                    </div>
+                    <!-- Symbol -->
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-asterisk" style="color: #fdc7c7;"></i></span>
+                        <span class="fw-bold me-1" style="width: 6em;"> Symbol:</span> 
+                        <span>🎀 Ribbon</span>
+                    </div>
                     <!-- Age -->
                     <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
-                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-address-card" style="color: #ffffff;"></i></span>
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-address-card" style="color: #c2ddfa;"></i></span>
                         <span class="fw-bold me-1" style="width: 6em;"> Age:</span> 
-                        <span>21 years old</span>
+                        <div class="d-flex flex-column">
+                            <span>94 years old <i class="text-secondary">(former)</i></span>
+                            <span>21 years old <i class="text-secondary">(actual)</i></span>
+                        </div>
                     </div>
                     <!-- Birthday -->
                     <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
                         <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-cake-candles" style="color: #F08080;"></i></span>
                         <span class="fw-bold me-1" style="width: 6em;"> Birthday:</span>
-                        <span>24 / June / 2166</span>
+                        <span>24 / June / 2093</span>
                     </div>
                     <!-- Height -->
                     <div class="m-0 p-0 mb-1 d-flex align-items-center">
-                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-ruler" style="color: #FFE4B5;"></i></span>
+                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-ruler " style="color: #FFE4B5;"></i></span>
                         <span class="fw-bold me-1" style="width: 6em;"> Height:</span> 
                         <span>161cm / 5'3''</span>
                     </div>
@@ -350,7 +354,7 @@
                     <div class="m-0 p-0 mb-1 d-flex align-items-center">
                         <span class="text-center" style="width: 1.75em;"><i class="fa-solid fa-dna" style="color: #AEF6C7;"></i></span>
                         <span class="fw-bold me-1" style="width: 6em;"> Ethnicity:</span>
-                        <span>Elven ⌯ Mutation 124</span>
+                        <span>Elven ⌯ Experiment 0144</span>
                     </div>
                     <!-- Education -->
                     <div class="m-0 p-0 d-flex align-items-center flex-wrap" style="word-break: keep-all;">
@@ -420,12 +424,21 @@
             <!-- Character column -->
             <div class="col-12 col-lg-8 d-flex flex-column info-box">
 
+                <!-- Alert -->
+                <div class="d-flex justify-content-center">
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        <i class="fa-solid fa-circle-info fa-xl"></i> <strong>Thank you for visitng my page!</strong> The purpose of this webpage is merely to showcase my original characters. If you would like something similar for yourself, don't hesitate on contacting me! <i class="fa-brands fa-discord"></i> <b>Myndi#5041</b>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+
                 <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3">
                     <div class="d-flex flex-column">
                         <h4 class="fs-4">History <span class="fs-6 text-secondary">歴史</span></h4>
                         <hr class="w-25 m-0 mb-2">
                         <p class="m-0 p-0">Myndi is 
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ligula quis leo convallis finibus. Aliquam porta porta lacinia. Aliquam quis diam est. Morbi dictum condimentum lectus, id mollis magna placerat et. Vivamus nec fringilla tortor. Nullam facilisis consequat ante eget placerat. Nam fringilla bibendum leo, sed auctor arcu facilisis vel. Praesent mattis ex arcu, vitae blandit turpis dapibus vitae. Integer a pretium nisi. Cras magna metus, ornare et hendrerit eu, convallis id quam. Phasellus egestas neque et quam aliquam fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Nulla vel euismod lorem. Cras sem urna, venenatis quis elit eu, suscipit blandit odio. Pellentesque feugiat viverra aliquet.</p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ligula quis leo convallis finibus. Aliquam porta porta lacinia. Aliquam quis diam est. Morbi dictum condimentum lectus, id mollis magna placerat et. Vivamus nec fringilla tortor. Nullam facilisis consequat ante eget placerat. Nam fringilla bibendum leo, sed auctor arcu facilisis vel. Praesent mattis ex arcu, vitae blandit turpis dapibus vitae. Integer a pretium nisi. Cras magna metus, ornare et hendrerit eu, convallis id quam. Phasellus egestas neque et quam aliquam fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Nulla vel euismod lorem. Cras sem urna, venenatis quis elit eu, suscipit blandit odio. Pellentesque feugiat viverra aliquet.
+                        </p>
                     </div>
                 </div>
                 <div class="d-flex flex-column">
