@@ -64,7 +64,7 @@
             /* outline: 1px solid red; */
         }
 
-        html {
+        body {
             font-size: .75rem;
         }
 
@@ -94,7 +94,6 @@
         /* Font */
         .mont {
             font-family: 'Montserrat', sans-serif;
-            /* font-size: 0.75rem; */
         }
 
         .info-box {
@@ -174,8 +173,12 @@
         }
 
         /* Button Main Page */
+        .main-page {
+            font-size: 12px !important;
+        }
+
         .main-page:hover {
-            opacity: 0.8;
+            opacity: 0.8
         }
 
         /* Links */
@@ -338,12 +341,13 @@
             box-shadow: 0 0 15px 5px hsl(var(--light), 25%);
         }
 
-        .font-size {
+        .font-size-slider {
             font-size: 12px !important;
+            color: hsl(var(--light));
         }
 
-        .font-size button {
-            color: hsl(var(--link));
+        .font-size-slider i {
+            color: hsl(var(--link-light), 70%);
             text-decoration: none;
             border: none;
             background-color: transparent;
@@ -385,6 +389,49 @@
             background-color: hsl(var(--link-light), 100%);
         }
 
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Other browsers */
+        input[type="range"]::-webkit-slider-runnable-track {
+            background: hsl(var(--light)) !important;
+            height: 0.5em;
+            border-radius: .5em;
+            margin-top: 5px;
+        }
+
+        /* Firefox */
+        input[type="range"]::-moz-range-track {
+            background: hsl(var(--light)) !important;
+            height: 0.5em;
+            border-radius: .5em;
+        }
+
+        /***** Chrome, Safari, Opera, and Edge Chromium *****/
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: -10px;
+            background-color: hsl(var(--link-light));
+            height: 1.25em;
+            width: 1.25em;
+            border-radius: 50%;
+        }
+
+        /***** Firefox *****/
+        input[type="range"]::-moz-range-thumb {
+            border: none;
+            background-color: hsl(var(--link-light));
+            height: 1.25em;
+            width: 1.25em;
+            border-radius: 50%;
+        }
+
     </style>
 
     </head>
@@ -408,7 +455,7 @@
 
 
             <!-- Visit counter -->
-            <div class="d-flex flex-column align-items-center position-absolute text-center end-0">
+            <div class="d-flex flex-column align-items-center position-absolute text-center end-0" style="font-size: 12px !important;">
                 <div class="text-white me-1">Visits</div>
                 <span class="website-counter badge text-bg-primary"></span>
             </div>
@@ -428,13 +475,16 @@
         <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-evenly position-relative">
 
             <!-- Font-size adjust PC -->
-            <div class="d-none d-lg-flex flex-column align-items-center text-white gap-2 font-size position-absolute start-100 text-center" style="width: 65px;">
-                <div class="d-flex">
+            <div class="d-none d-lg-flex flex-column align-items-center text-white gap-2 font-size-slider position-absolute start-100 text-center" style="width: 65px;">
+                <div class="d-flex mb-2">
                     <p class="m-0 p-0">Font size</p>
                 </div>
-                <div class="d-flex">
-                    <button class="t_bigger font-button"><i class="fa-solid fa-plus fa-xl"></i></button>
-                    <button class="t_smaller font-button"><i class="fa-solid fa-minus fa-xl"></i></button>
+                <div class="d-flex justify-content-between w-100">
+                    <i class="fa-solid fa-minus fa-xl"></i>
+                    <i class="fa-solid fa-plus fa-xl"></i>
+                </div>
+                <div>
+                    <input type="range" class="mt-1" value="0.75" min="0.75" max="1.25" step="0.25" id="font-size">
                 </div>
             </div>
 
@@ -442,11 +492,14 @@
             <div class="col-12 col-lg-4 position-relative">
 
                 <!-- Font-size adjust phone -->
-                <div class="text-white gap-2 font-size text-end d-flex d-lg-none justify-content-end mb-3">
-                    <span>Font size</span>
-                    <div class="d-flex">
-                        <button class="t_bigger font-button"><i class="fa-solid fa-plus fa-xl"></i></button>
-                        <button class="t_smaller font-button"><i class="fa-solid fa-minus fa-xl"></i></button>
+                <div class="text-white gap-2 font-size-slider text-end d-flex d-lg-none justify-content-end mb-3">
+                    <p class="m-0 p-0">Font size</p>
+                    <div class="d-flex justify-content-between w-100">
+                        <i class="fa-solid fa-minus fa-xl"></i>
+                        <i class="fa-solid fa-plus fa-xl"></i>
+                    </div>
+                    <div>
+                        <input type="range" class="mt-1" value="0.75" min="0.75" max="1.25" step="0.25" id="font-size">
                     </div>
                 </div>
 
@@ -469,7 +522,7 @@
                     <img src="assets/img/みんでぃ.png" alt="Myndi" class="img-fluid portrait">
                     <figure class="text-center text-white bg-low-op-caption px-2 pt-1 w-100">
                         <blockquote class="blockquote">
-                            <p class="fw-lighter small fs-4">
+                            <p class="fw-lighter small fs-5">
                                 "The greatest disease of humanity, is humanity itself."
                             </p>
                         </blockquote>
