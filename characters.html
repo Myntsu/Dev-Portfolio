@@ -188,9 +188,14 @@
         }
         /* End Links */
 
-        .introduction p::first-letter {
+        .introduction p:is(:first-child)::first-letter {
             font-size: 2rem;
             line-height: .75em;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .introduction p {
+            line-height: 1.75em;
         }
 
         .page-bg, .animation-wrapper {
@@ -329,7 +334,7 @@
             width: 100%;
             height: auto;
             border: .15rem solid hsl(var(--dark-light));
-            border-radius: .5em;
+            border-radius: .5em 0 .5em .5em;
             box-shadow: 0 0 15px 5px hsl(var(--light), 25%);
         }
 
@@ -611,8 +616,12 @@
 
                 <div class="d-flex flex-column main-history text-white px-3 pb-3 mb-3">
                     <div class="row mb-3 py-2">
-
-                        <ul class="col-12 nav pe-2" id="pics-myndi" role="tablist">
+                        
+                        <!-- Tabs PC -->
+                        <ul class="col-12 nav pe-2 d-none d-lg-flex" id="pics-myndi" role="tablist">
+                            <li class="nav-item me-5">
+                                <p class="nav-link m-0 text-white">References</p>
+                            </li>
                             <li class="nav-item" role="presentation">
                               <button class="nav-link active" id="myndi-illus-tab" data-bs-toggle="tab" data-bs-target="#myndi-illustration" type="button" role="tab" aria-controls="myndi-illustration" aria-selected="true">Illustration</button>
                             </li>
@@ -625,19 +634,41 @@
                         </ul>
 
                         <!-- Introduction paragraph -->
-                        <div class="col-12 col-lg-6 introduction mb-3 mb-lg-0">
-                            <div class="d-block flex-wrap w-100">
-                                <p class="m-0 p-0" style="word-wrap: break-word;">
-                                    Myndi is a living human experiment aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaa aaaaaaaaa aaaaaaa aaaaaaaa aaaaaaaaa aa aaaaaaaaaa aaaaaaa aaaaaaaa aaaaaa aaaaaaaaaaaaa aaaaaaaa aaaaaaaaaaaaa aaaaaaaaa aaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aa  aa aaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                                </p>
-                            </div>
+                        <div class="col-12 col-lg-6 introduction my-3 my-lg-0">
+                            <p class="m-0 p-0 mb-3" style="word-wrap: break-word;">
+                                <b class="ps-3">Myndi Bonart</b> is one of the principal characters in an unreleased fictional novel. Biological sister of <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Smytsu</a>, adopted by <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Astrid</a>, and met <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Nysha</a> along the way.
+                            </p>
+
+                            <p class="m-0 p-0 mb-3" style="word-wrap: break-word;">
+                                <span class="ps-3">Rightfully</span> condecorated as the princess of <b>Salvia</b>, the biggest bastion of the remainder high elven society. Lead scientist on nano-tech and space travel private company, in which they achieved immortality, due to aging and diseases, regarding human kind and all living species.
+                            </p>
+                            
+                            <p class="m-0 p-0" style="word-wrap: break-word;">
+                                <span class="ps-3">Due</span> to her brilliance and greater capabilities she has earned mulitples <b>Nobel</b> adwards in chemistry, medicine & peace, but exiled from all the remaining human <b>T-10 Domes</b>, where more than 44% of humanity resides.
+                            </p>
                         </div>
+
+                        <!-- Tabs PHONE -->
+                        <ul class="col-12 nav pe-2 d-flex d-lg-none" id="pics-myndi" role="tablist">
+                            <li class="nav-item me-auto">
+                                <p class="nav-link m-0 text-white">References</p>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="myndi-illus-tab" data-bs-toggle="tab" data-bs-target="#myndi-illustration" type="button" role="tab" aria-controls="myndi-illustration" aria-selected="true">Illustration</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="myndi-ingame-tab" data-bs-toggle="tab" data-bs-target="#myndi-ingame" type="button" role="tab" aria-controls="myndi-ingame" aria-selected="false">Ingame</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="myndi-3d-tab" data-bs-toggle="tab" data-bs-target="#myndi-3d" type="button" role="tab" aria-controls="myndi-3d" aria-selected="false">3D</button>
+                            </li>
+                        </ul>
 
                         <!-- Tab list images -->
                         <div class="col-12 col-lg-6 m-0 p-0">
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active px-2" id="myndi-illustration" role="tabpanel" aria-labelledby="myndi-illus-tab" tabindex="0">
-                                    <img src="assets/img/みんでぃ.png" alt="Myndi illustration" class="other-images">
+                                    <img src="assets/img/tinywow_1_5387065.png" class="other-images">
                                 </div>
                                 <div class="tab-pane fade px-2" id="myndi-ingame" role="tabpanel" aria-labelledby="myndi-ingame-tab" tabindex="0">
                                     <img src="assets/img/Screenshot_191221_49955.jpg" alt="Myndi ingame" class="other-images">
