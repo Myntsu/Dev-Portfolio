@@ -37,6 +37,19 @@ $(document).ready(function(){
         $("#div2").fadeToggle("slow");
         $("#div3").fadeToggle(0);
       });
+
+
+    $('.t_bigger').click(function(){
+        var curr_font_size = $('html').css('font-size');
+        var new_font_size = parseFloat(curr_font_size) + 1;
+        $('html').animate({fontSize: new_font_size}, 250);
+    });
+
+    $('.t_smaller').click(function(){
+        var curr_font_size = $('html').css('font-size');
+        var new_font_size = parseFloat(curr_font_size) - 1;
+        $('html').animate({fontSize: new_font_size}, 250);
+    });
 })
 
 const colors = document.querySelectorAll(`.colors`);
