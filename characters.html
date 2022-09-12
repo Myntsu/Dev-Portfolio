@@ -60,9 +60,9 @@
             --alert: 351, 81%, 27%;
         }
 
-        * {
+        /* * { */
             /* outline: 1px solid red; */
-        }
+        /* } */
 
         body {
             font-size: .75rem;
@@ -324,7 +324,7 @@
         }
 
         .text-bg-primary {
-            background-color: hsl(var(--link)) !important;
+            background-color: hsl(var(--link-light)) !important;
         }
 
         .portrait {
@@ -344,10 +344,11 @@
         .font-size-slider {
             font-size: 12px !important;
             color: hsl(var(--light));
+            width: 10em;
         }
 
         .font-size-slider i {
-            color: hsl(var(--link-light), 70%);
+            color: hsl(var(--link-light));
             text-decoration: none;
             border: none;
             background-color: transparent;
@@ -356,6 +357,7 @@
         #pics-myndi {
             display: flex;
             justify-content: end;
+            font-size: 12px !important;
         }
 
         #pics-myndi button {
@@ -371,16 +373,33 @@
             background-color: hsl(var(--link-light), 100%);
         }
 
+        #pics-myndi2 {
+            display: flex;
+            justify-content: end;
+        }
+
+        #pics-myndi2 button {
+            text-decoration: none;
+            border: none;
+            background-color: hsl(var(--dark));
+            color: hsl(var(--light));
+
+        }
+
+        #pics-myndi2 button:is(:active, :focus, :focus-visible) {
+            background-color: hsl(var(--link-light), 100%);
+        }
+
         #version-tab {
             display: flex;
             justify-content: end;
         }
 
         #version-tab button {
+            font-size: 12px !important;
             text-decoration: none;
             border: none;
             background-color: hsl(var(--dark));
-            /* filter: grayscale(100%); */
             color: hsl(var(--light));
 
         }
@@ -397,7 +416,7 @@
             height: auto;
         }
 
-        /* Other browsers */
+        /* Chrome, Safari, Opera, and Edge Chromium */
         input[type="range"]::-webkit-slider-runnable-track {
             background: hsl(var(--light)) !important;
             height: 0.5em;
@@ -412,24 +431,36 @@
             border-radius: .5em;
         }
 
-        /***** Chrome, Safari, Opera, and Edge Chromium *****/
+        /* Chrome, Safari, Opera, and Edge Chromium */
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            margin-top: -10px;
+            margin-top: -5px;
             background-color: hsl(var(--link-light));
             height: 1.25em;
             width: 1.25em;
             border-radius: 50%;
         }
 
-        /***** Firefox *****/
+        /* Firefox */
         input[type="range"]::-moz-range-thumb {
             border: none;
             background-color: hsl(var(--link-light));
             height: 1.25em;
             width: 1.25em;
             border-radius: 50%;
+        }
+
+        /* Chrome, Safari, Opera, and Edge Chromium */
+        input[type="range"]::-webkit-slider-thumb:is(:active, :hover, :focus) {
+            background-color: hsl(var(--link-light));
+            box-shadow: 0 0 3px 3px hsl(var(--light), 30%);
+        }
+
+        /* Firefox */
+        input[type="range"]::-moz-range-thumb:is(:active, :hover, :focus) {
+            background-color: hsl(var(--link-light));
+            box-shadow: 0 0 3px 3px hsl(var(--light), 30%);
         }
 
     </style>
@@ -450,58 +481,47 @@
         </div>
 
         <!-- Main Page Button -->
-        <div class="d-flex align-items-center justify-content-center my-4 position-relative w-100">
-
-
-
-            <!-- Visit counter -->
-            <div class="d-flex flex-column align-items-center position-absolute text-center end-0" style="font-size: 12px !important;">
-                <div class="text-white me-1">Visits</div>
-                <span class="website-counter badge text-bg-primary"></span>
-            </div>
+        <div class="d-flex align-items-center justify-content-center mt-4 mb-1 position-relative w-100">
 
             <hr class="w-25 ms-auto border-white">
-
             <!-- Button -->
             <div class="d-flex flex-column align-items-center justify-content-center position-relative main-page">
                 <p class="text-white m-0">Main Page</p>
                 <a href="/" class="stretched-link"><button class="py-1 px-4 mx-3 text-decoration-none bg-transparent border-0"><i class="fa-solid icons fa-arrow-left text-white fa-xl"></i></button></a>
             </div>
-
             <hr class="w-25 me-auto border-white">
         </div>
 
-        <!-- Wrapper for content -->
-        <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-evenly position-relative">
 
-            <!-- Font-size adjust PC -->
-            <div class="d-none d-lg-flex flex-column align-items-center text-white gap-2 font-size-slider position-absolute start-100 text-center" style="width: 65px;">
-                <div class="d-flex mb-2">
-                    <p class="m-0 p-0">Font size</p>
+
+        <!-- Wrapper for content -->
+        <div class="d-flex flex-column flex-md-row flex-wrap mb-3 justify-content-between position-relative">
+
+            <div class="d-flex w-100 align-items-start mb-3">
+
+                <!-- Visit counter -->
+                <div class="position-absolute align-content-center text-center mt-2" style="font-size: 12px !important; left: 50%; transform: translate(-50%, -50%);">
+                    <span class="website-counter badge text-bg-primary"></span>
                 </div>
-                <div class="d-flex justify-content-between w-100">
-                    <i class="fa-solid fa-minus fa-xl"></i>
-                    <i class="fa-solid fa-plus fa-xl"></i>
-                </div>
-                <div>
-                    <input type="range" class="mt-1" value="0.75" min="0.75" max="1.25" step="0.25" id="font-size">
+
+                <!-- Font-size adjust phone -->
+                <div class="d-flex flex-column text-white gap-2 font-size-slider ms-auto pe-1">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex gap-1 align-items-center">
+                            <i class="fa-solid fa-minus"></i><span class="fs-6">A</span>
+                        </div>
+                        <div class="d-flex gap-1 align-items-center">
+                            <i class="fa-solid fa-plus"></i><span class="fs-6">A</span>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="range" value="0.75" min="0.75" max="1.25" step="0.25" id="font-size">
+                    </div>
                 </div>
             </div>
 
             <!-- Image and information column -->
             <div class="col-12 col-lg-4 position-relative">
-
-                <!-- Font-size adjust phone -->
-                <div class="text-white gap-2 font-size-slider text-end d-flex d-lg-none justify-content-end mb-3">
-                    <p class="m-0 p-0">Font size</p>
-                    <div class="d-flex justify-content-between w-100">
-                        <i class="fa-solid fa-minus fa-xl"></i>
-                        <i class="fa-solid fa-plus fa-xl"></i>
-                    </div>
-                    <div>
-                        <input type="range" class="mt-1" value="0.75" min="0.75" max="1.25" step="0.25" id="font-size">
-                    </div>
-                </div>
 
                 <!-- Name -->
                 <div class="text-center">
@@ -670,9 +690,11 @@
                 <div class="d-flex flex-column main-history text-white px-3 pb-3 mb-3">
                     <div class="row mb-3 py-2">
                         
+                        <div class="col-6"></div>
+
                         <!-- Tabs PC -->
-                        <ul class="col-12 nav pe-2 d-none d-lg-flex" id="pics-myndi" role="tablist">
-                            <li class="nav-item me-5">
+                        <ul class="col-6 nav pe-2 d-none d-lg-flex" id="pics-myndi" role="tablist">
+                            <li class="nav-item me-2">
                                 <p class="nav-link m-0 text-white">References</p>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -702,7 +724,7 @@
                         </div>
 
                         <!-- Tabs PHONE -->
-                        <ul class="col-12 nav pe-2 d-flex d-lg-none" id="pics-myndi" role="tablist">
+                        <ul class="col-12 nav pe-2 d-flex d-lg-none" id="pics-myndi2" role="tablist">
                             <li class="nav-item me-auto">
                                 <p class="nav-link m-0 text-white">References</p>
                             </li>

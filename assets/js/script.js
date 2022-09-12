@@ -46,7 +46,9 @@ slider.addEventListener('input', function() {
     var size = slider.value;
     document.body.style.fontSize = size + "rem";
 });
+// End of adjust font size
 
+// Color picker
 const colors = document.querySelectorAll(`.colors`);
 const btn = document.querySelector(".button");
 
@@ -67,17 +69,3 @@ function handleClick({ target }) {
 for (let color of colors) {
 	color.addEventListener("click", handleClick);
 }
-
-function myFunction() {
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copied: " + copyText.value;
-    }
-  
-function outFunc() {
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copy to clipboard";
-}
-
-$('body').on("click touchstart", ".switch", function(e){
-    $(".regular, .alt").toggle();
- });
