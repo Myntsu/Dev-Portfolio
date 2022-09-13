@@ -54,7 +54,8 @@
             --gray: 228, 9%, 45%;
             --dark: 57, 90%, 4%;
             --light-box: 351, 81%, 27%;
-            --dark-box: 28, 83%, 7%;
+            /* --dark-box: 28, 83%, 5%; */
+            --dark-box: 22, 15%, 15%;
             --link: 344, 66%, 37%;
             --link-light: 344, 66%, 60%;
             --alert: 351, 81%, 27%;
@@ -178,6 +179,7 @@
 
         /* Links */
         .link-info {
+            cursor: not-allowed;
             color: hsl(var(--link-light), 100%) !important;
         }
 
@@ -206,7 +208,7 @@
         }
 
         .page-bg {
-            background: hsl(var(--dark-box));
+            background: hsl(var(--dark));
             background-blend-mode: screen;
             background-size: cover;
             filter: grayscale(75%);
@@ -281,7 +283,7 @@
 
         .alert-primary {
             color: hsl(var(--light));
-            background-color: hsl(var(--link), 30%);
+            background-color: hsl(var(--link-light), 30%);
             border-color: hsl(var(--light), 20%);
             box-shadow: 0 0 15px 1px hsl(var(--light), 25%);
         }
@@ -305,16 +307,16 @@
         .info-color {
             color: hsl(var(--light));
             background-color: hsl(var(--dark-box), 50%);
-            border: .15em solid hsl(var(--light), 20%);
-            border-radius: .5em;
+            border: 1.5px solid hsl(var(--light), 20%);
+            border-radius: 5px;
             box-shadow: 0 0 5px 1px hsl(var(--light), 25%);
         }
 
         .main-history {
             color: hsl(var(--light));
             background-color: hsl(var(--dark-box), 50%);
-            border: .15em solid hsl(var(--light), 20%);
-            border-radius: .5em;
+            border: 1.5px solid hsl(var(--light), 20%);
+            border-radius: 5px;
             box-shadow: 0 0 5px 1px hsl(var(--light), 25%);
         }
 
@@ -323,16 +325,16 @@
         }
 
         .portrait {
-            border: .15rem solid hsl(var(--dark-light));
-            border-radius: .5em;
+            border: .15em solid hsl(var(--dark-light));
+            border-radius: 5px;
             box-shadow: 0 0 15px 5px hsl(var(--light), 25%);
         }
 
         .other-images {
             width: 100%;
             height: auto;
-            border: .15rem solid hsl(var(--dark-light));
-            border-radius: .5em 0 .5em .5em;
+            border: .15em solid hsl(var(--dark-light));
+            border-radius: 5px 0 5px 5px;
             box-shadow: 0 0 15px 5px hsl(var(--light), 25%);
         }
 
@@ -359,7 +361,6 @@
             text-decoration: none;
             border: none;
             background-color: hsl(var(--dark));
-            /* filter: grayscale(100%); */
             color: hsl(var(--light));
 
         }
@@ -463,6 +464,45 @@
             cursor: not-allowed;
         }
 
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5em;
+
+            width: 100%;
+            height: auto;
+
+            color: hsl(var(--light));
+            background-color: hsl(var(--dark-box), 90%);
+            
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px !important;
+
+            margin: 10em 0 0 0;
+            padding: 2em 0em;
+
+            border-width: 1px 0 0 0;
+            border-style: solid;
+            border-color: hsl(var(--light), 15%);
+            box-shadow: 0 0 7px 1.5px hsl(var(--light), 25%);
+        }
+
+        footer p {
+            margin: 0;
+            padding: 0;
+        }
+
+        footer a {
+            color: hsl(var(--link-light));
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: hsl(var(--link-light), 50%);
+        }
+
     </style>
 
     </head>
@@ -506,11 +546,11 @@
                     <a class="text-decoration-none fs-5 flags-disabled"><img src="assets/img/flags/flag-japan_1f1ef-1f1f5.png" alt="Flag JP" width="32" height="32"></a>
                     <a class="text-decoration-none fs-5 flags-disabled"><img src="assets/img/flags/flag-south-korea_1f1f0-1f1f7.png" alt="Flag KR" width="32" height="32"></a>
                     <a class="text-decoration-none fs-5 flags-disabled"><i class="flag flag-south-korea"></i></a>
-                    <span class="text-white small"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Work in progress</span>
+                    <span class="text-white" style="font-size: 10px !important;"><i class="fa-solid fa-screwdriver-wrench me-1"></i> Work in progress</span>
                 </div>
 
                 <!-- Visit counter -->
-                <div class="position-absolute align-content-center text-center mt-2" style="font-size: 12px !important; left: 50%; transform: translate(-50%, -50%);">
+                <div class="position-absolute align-content-center text-center mt-2 d-none d-lg-flex" style="font-size: 12px !important; left: 50%; transform: translate(-50%, -50%);">
                     <span class="website-counter badge text-bg-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Your visits"></span>
                 </div>
 
@@ -540,7 +580,7 @@
 
                 <!-- Alert -->
                 <div class="d-flex d-lg-none justify-content-center">
-                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <div class="alert alert-primary alert-dismissible fade show m-0 mb-2" role="alert">
                         <p class="m-0 p-0"><i class="fa-solid icons fa-circle-info fa-lg"></i> <b>Thank you for visiting us!</b></p>
                         <p class="m-0 p-0">This web was designed to showcase my personal original characters. If you wish something like this for yourself, don't hesitate on contacting me <i class="fa-brands fa-discord"></i> <b>Myndi#5041</b></p>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -548,7 +588,7 @@
                 </div>
 
                 <!-- Image -->
-                <div class="d-flex position-relative align-items-end mb-2">
+                <div class="d-flex position-relative align-items-end mb-3 mb-lg-2">
                     <img src="assets/img/みんでぃ.png" alt="Myndi" class="img-fluid portrait">
                     <figure class="text-center text-white bg-low-op-caption px-2 pt-1 w-100">
                         <blockquote class="blockquote">
@@ -563,7 +603,7 @@
                 </div>
 
                 <!-- Personal information -->
-                <div class="d-flex flex-column info-color p-3 mb-1">
+                <div class="d-flex flex-column info-color p-3 mb-3 mb-lg-1">
                     <h5 class="fs-4">Information <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> ユーザー情報</span></h5>
                     <hr class="w-25 m-0 mb-2">
                     <!-- Name -->
@@ -597,13 +637,13 @@
                         <span>24 / June / 2093</span>
                     </div>
                     <!-- Height -->
-                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flew-wrap">
                         <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-ruler"></i></span>
                         <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Height:</span> 
                         <span>161cm / 5'3''</span>
                     </div>
                     <!-- Family -->
-                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
                         <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-people-group"></i></span>
                         <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Family:</span>
                         <div class="d-flex flex-column">
@@ -613,13 +653,13 @@
                         </div>
                     </div>
                     <!-- Ethnicity -->
-                    <div class="m-0 p-0 mb-1 d-flex align-items-center">
+                    <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
                         <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-dna"></i></span>
                         <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Ethnicity:</span>
                         <span>Elven ⌯ Experiment #144</span>
                     </div>
                     <!-- Education -->
-                    <div class="m-0 p-0 d-flex align-items-center flex-wrap" style="word-break: keep-all;">
+                    <div class="m-0 p-0 d-flex align-items-center flex-wrap">
                         <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-graduation-cap"></i></span>
                         <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Education:</span>
                         <div class="col">
@@ -765,64 +805,106 @@
                         </div>
                     </div>
 
-                    <div class="d-flex flex-column">
+                    <!-- Hisoory -->
+                    <div class="d-flex flex-column mb-3">
                         <h4 class="fs-4">History <span class="fs-6 text-secondary">歴史</span></h4>
                         <hr class="w-25 m-0 mb-2">
                         <p class="m-0 p-0">Myndi is 
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ut ligula quis leo convallis finibus. Aliquam porta porta lacinia. Aliquam quis diam est. Morbi dictum condimentum lectus, id mollis magna placerat et. Vivamus nec fringilla tortor. Nullam facilisis consequat ante eget placerat. Nam fringilla bibendum leo, sed auctor arcu facilisis vel. Praesent mattis ex arcu, vitae blandit turpis dapibus vitae. Integer a pretium nisi. Cras magna metus, ornare et hendrerit eu, convallis id quam. Phasellus egestas neque et quam aliquam fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse potenti. Nulla vel euismod lorem. Cras sem urna, venenatis quis elit eu, suscipit blandit odio. Pellentesque feugiat viverra aliquet.
                         </p>
                     </div>
-                </div>
 
-                <div class="d-flex flex-column bg-low-op-dark text-white p-3 mb-3">
+                    <!-- Regular/alt -->
+                    <div class="d-flex flex-column">
 
-                </div>
-
-                <div class="d-flex flex-column main-history p-3">
-
-                    <!-- Tab list versions -->
-                    <div class="col-12 m-0 p-0">
-                        <ul class="nav" id="version-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link active" id="regular-tab" data-bs-toggle="tab" data-bs-target="#regular-version" type="button" role="tab" aria-controls="regular-version" aria-selected="true">Regular</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="alt-tab" data-bs-toggle="tab" data-bs-target="#alt-version" type="button" role="tab" aria-controls="alt-version" aria-selected="false">Alternative</button>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="regular-version" role="tabpanel" aria-labelledby="regular-tab" tabindex="0">
-                                <!-- Regular traits + preferences -->
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex text-white flex-wrap">
-                                        <div class="col-5 col-sm-4">
-                                            <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
-                                            <div class="col-4 col-lg-12">
-                                                <hr class="w-75 m-0 mb-2">
+                        <!-- Tab list versions -->
+                        <div class="col-12 m-0 p-0">
+                            <ul class="nav" id="version-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link active" id="regular-tab" data-bs-toggle="tab" data-bs-target="#regular-version" type="button" role="tab" aria-controls="regular-version" aria-selected="true">Regular</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                  <button class="nav-link" id="alt-tab" data-bs-toggle="tab" data-bs-target="#alt-version" type="button" role="tab" aria-controls="alt-version" aria-selected="false">Alternative</button>
+                                </li>
+                            </ul>
+    
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="regular-version" role="tabpanel" aria-labelledby="regular-tab" tabindex="0">
+                                    <!-- Regular traits + preferences -->
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex text-white flex-wrap">
+                                            <div class="col-5 col-sm-4">
+                                                <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                                <div class="col-4 col-lg-12">
+                                                    <hr class="w-75 m-0 mb-2">
+                                                </div>
+                                                    <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> 姫様</span></h5>
+                                                <ul>
+                                                    <li>Affectionate</li>
+                                                    <li>Anxious</li>
+                                                    <li>Caring</li>
+                                                    <li>Cowardly</li>
+                                                    <li>Intelligent</li>
+                                                    <li>Logical</li>
+                                                    <li>Lonely</li>
+                                                    <li>Sincere</li>
+                                                    <li>Sensitive</li>
+                                                    <li>Timid</li>
+                                                </ul>
                                             </div>
-                                                <h5 class="fs-5">Princess<span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> 姫様</span></h5>
+                                            <div class="col-7 col-sm-8 d-flex align-items-center justify-content-center">
+                                                <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="img-fluid d-none d-md-block other-images" style="object-fit: cover; object-position: 80% 25%;">
+                                                <img src="assets/img/rounded-img/tinywow_CM_4992789.png" alt="Myndi sakura flower" class="d-block d-md-none w-100">
+                                            </div>
+                                        </div>
+    
+                                        <div class="d-flex flex-column rounded text-white p-3">
+                                            <h5 class="fs-4">Preferences<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
                                             <ul>
-                                                <li>Affectionate</li>
-                                                <li>Anxious</li>
-                                                <li>Caring</li>
-                                                <li>Cowardly</li>
-                                                <li>Intelligent</li>
-                                                <li>Logical</li>
-                                                <li>Lonely</li>
-                                                <li>Sincere</li>
-                                                <li>Sensitive</li>
-                                                <li>Timid</li>
+                                                <li> Dressing:
+                                                    <ul>
+                                                        <li>ba</li>
+                                                        <li>b</li>
+                                                        <li>d</li>
+                                                    </ul>
+                                                </li>
+                                                <li>People:</li>
+                                                <li>Other:</li>
                                             </ul>
                                         </div>
-                                        <div class="col-7 col-sm-8 d-flex align-items-center justify-content-center">
-                                            <img src="https://cdn.discordapp.com/attachments/341226891539382273/713135346396823572/CM.png" alt="" class="img-fluid d-none d-md-block other-images" style="object-fit: cover; object-position: 80% 25%;">
-                                            <img src="assets/img/rounded-img/tinywow_CM_4992789.png" alt="Myndi sakura flower" class="d-block d-md-none w-100">
-                                        </div>
                                     </div>
-
-                                    <div class="d-flex flex-column rounded text-white p-3">
-                                        <h5 class="fs-4">Preferences<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                </div>
+    
+                                <div class="tab-pane fade" id="alt-version" role="tabpanel" aria-labelledby="alt-tab" tabindex="0">
+    
+                                    <!-- Alt trais + preferences -->
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex bg-low-op-dark text-white flex-wrap">
+                                            <div class="col-5 col-sm-4 d-flex flex-column">
+                                                <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
+                                                <div class="col-4 col-lg-12">
+                                                    <hr class="w-75 m-0 mb-2">
+                                                </div>
+                                                    <h5 class="fs-5">Kuudere <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> クーデレ</span></h5>
+                                                <ul>
+                                                    <li>Bossy</li>
+                                                    <li>Bully</li>
+                                                    <li>Clever</li>
+                                                    <li>Competitive</li>
+                                                    <li>Daring</li>
+                                                    <li>Impolite</li>
+                                                    <li>Mean</li>
+                                                    <li>Picky</li>
+                                                    <li>Restless</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-7 col-sm-8 d-flex justify-content-center align-items-center">
+                                                <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="Myndi in the beach" class="img-fluid d-none d-md-block other-images" style="object-fit: cover; object-position: 80% 25%;">
+                                                <img src="assets/img/rounded-img/tinywow_myn1_4992684.png" alt="Myndi in the beach" class="w-100 d-block d-md-none">
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <p>Likings:</p>
                                         <ul>
                                             <li> Dressing:
                                                 <ul>
@@ -835,60 +917,24 @@
                                             <li>Other:</li>
                                         </ul>
                                     </div>
+    
                                 </div>
                             </div>
-
-                            <div class="tab-pane fade" id="alt-version" role="tabpanel" aria-labelledby="alt-tab" tabindex="0">
-
-                                <!-- Alt trais + preferences -->
-                                <div class="d-flex flex-column">
-                                    <div class="d-flex bg-low-op-dark text-white flex-wrap">
-                                        <div class="col-5 col-sm-4 d-flex flex-column">
-                                            <h5 class="fs-4">Traits<span class="fs-6 text-secondary ms-1"> 性格</span></h5>
-                                            <div class="col-4 col-lg-12">
-                                                <hr class="w-75 m-0 mb-2">
-                                            </div>
-                                                <h5 class="fs-5">Kuudere <span class="fs-6 text-secondary ms-1" style="word-break: keep-all;"> クーデレ</span></h5>
-                                            <ul>
-                                                <li>Bossy</li>
-                                                <li>Bully</li>
-                                                <li>Clever</li>
-                                                <li>Competitive</li>
-                                                <li>Daring</li>
-                                                <li>Impolite</li>
-                                                <li>Mean</li>
-                                                <li>Picky</li>
-                                                <li>Restless</li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-7 col-sm-8 d-flex justify-content-center align-items-center">
-                                            <img src="https://cdn.discordapp.com/attachments/341226891539382273/735697960314208377/myn1.png" alt="Myndi in the beach" class="img-fluid d-none d-md-block other-images" style="object-fit: cover; object-position: 80% 25%;">
-                                            <img src="assets/img/rounded-img/tinywow_myn1_4992684.png" alt="Myndi in the beach" class="w-100 d-block d-md-none">
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <p>Likings:</p>
-                                    <ul>
-                                        <li> Dressing:
-                                            <ul>
-                                                <li>ba</li>
-                                                <li>b</li>
-                                                <li>d</li>
-                                            </ul>
-                                        </li>
-                                        <li>People:</li>
-                                        <li>Other:</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                        </div>
-
-                    </div> <!-- End of Tab version -->
+    
+                        </div> <!-- End of Tab version -->
+                    </div>
                 </div>
+
+
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>Created by <i class="fa-brands fa-discord"></i> Myndi#5041</p>
+        <span>|</span>
+        <a href="https://www.buymeacoffee.com/myndi"><i class="fa-solid fa-mug-saucer"></i> Buy me a coffee</a>
+    </footer>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
