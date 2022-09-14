@@ -61,9 +61,9 @@
             --alert: 351, 81%, 27%;
         }
 
-        /* * { */
+        *:hover {
             /* outline: 1px solid red; */
-        /* } */
+        }
 
         body {
             font-size: .75rem;
@@ -503,6 +503,56 @@
             color: hsl(var(--link-light), 50%);
         }
 
+        .caption-img {
+            position: absolute;
+            left: 0%;
+            bottom: 0%;
+
+            width: 100%;
+
+            margin: 15px 0;
+            padding: 10px 5px;
+
+            text-align: center;
+
+            color: hsl(var(--light));
+            background-color: hsl(var(--dark), 75%);
+        }
+
+        .sideway-text {
+            position: absolute;
+            rotate: 180deg;
+
+            margin: 0;
+            padding: 0;
+
+            writing-mode: vertical-lr;
+            color: hsl(var(--dark), 7%);
+        }
+
+        @media all and (max-width: 499px) {  
+            .sideway-text {
+                font-size: 100px;
+            } 
+        }
+
+        @media all and (min-width: 500px) {  
+            .sideway-text {
+                font-size: 150px;
+            } 
+        }
+        @media all and (min-width: 991px) { 
+            .sideway-text {
+                font-size: 80px;
+            } 
+        }
+
+        @media all and (min-width: 1200px) { 
+            .sideway-text {
+                font-size: 120px;
+            } 
+        }
+
     </style>
 
     </head>
@@ -588,15 +638,16 @@
                 </div>
 
                 <!-- Image -->
-                <div class="d-flex position-relative align-items-end mb-3 mb-lg-2">
+                <div class="position-relative mb-3 mb-lg-2">
+                    <h5 class="sideway-text">Myndi</h5>
                     <img src="assets/img/みんでぃ.png" alt="Myndi" class="img-fluid portrait">
-                    <figure class="text-center text-white bg-low-op-caption px-2 pt-1 w-100">
+                    <figure class="caption-img">
                         <blockquote class="blockquote">
-                            <p class="fw-lighter small fs-5">
+                            <p class="fw-lighter">
                                 "The greatest disease of humanity, is humanity itself."
                             </p>
                         </blockquote>
-                        <figcaption class="blockquote-footer">
+                        <figcaption class="blockquote-footer" style="font-size: 11px !important;">
                             Myndi Bonart
                         </figcaption>
                         </figure>
@@ -666,64 +717,67 @@
                             <p class="m-0 p-0">Studying Nano-robotics & Human Creation</p>
                         </div>
                     </div>
+                
+                    <!-- Color Palette -->
+                    <div class="d-flex flex-column my-3">
+                        <h5 class="fs-4">Color Palette <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
+                        <hr class="w-25 m-0 mb-2">
 
-                <!-- Color Palette -->
-                <div class="d-flex flex-column mt-3 mb-1">
-                    <h5 class="fs-4">Color Palette <span class="fs-6 text-secondary ms-1"> カラーパレット</span></h5>
-                    <hr class="w-25 m-0 mb-2">
-
-                    <!-- Clothing -->
-                    <div class="d-flex flex-column">
-                        <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
-                            <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-shirt"></i></span>
-                            <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Clothing:</span>
-                            <!-- Colors  -->
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-1">
-                                    <div id="color-persian-plum" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Persian Plum</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-1">
-                                    <div id="color-umber" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Umber</span> 
-                                </div>
-                                <div class="d-flex align-items-center mb-1">
-                                    <div id="color-sepia" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Sepia</span> 
+                        <!-- Clothing -->
+                        <div class="d-flex flex-column">
+                            <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                                <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-shirt"></i></span>
+                                <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Clothing:</span>
+                                <!-- Colors  -->
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div id="color-persian-plum" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Persian Plum</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div id="color-umber" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Umber</span> 
+                                    </div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div id="color-sepia" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Sepia</span> 
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Hair -->
-                    <div class="d-flex flex-column">
-                        <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
-                            <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-scissors"></i></span>
-                            <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Hair:</span>
+                        <!-- Hair -->
+                        <div class="d-flex flex-column">
+                            <div class="m-0 p-0 mb-1 d-flex align-items-center flex-wrap">
+                                <span class="text-center align-self-start" style="width: 1.75em;"><i class="fa-solid icons fa-scissors"></i></span>
+                                <span class="fw-bold me-1 desc-font align-self-start" style="width: 6em;"> Hair:</span>
+                                <!-- Colors -->
+                                <div class="d-flex flex-column">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div id="color-ivory" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Ivory</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <div id="color-floral-white" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Floral White</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Eyes -->
+                        <div class="m-0 p-0 d-flex align-items-center">
+                            <span class="text-center" style="width: 1.75em;"><i class="fa-solid icons fa-eye"></i></span>
+                            <span class="fw-bold me-1 desc-font" style="width: 6em;"> Eyes:</span>
                             <!-- Colors -->
-                            <div class="d-flex flex-column">
-                                <div class="d-flex align-items-center mb-1">
-                                    <div id="color-ivory" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Ivory</span>
-                                </div>
-                                <div class="d-flex align-items-center mb-1">
-                                    <div id="color-floral-white" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span>Floral White</span>
-                                </div>
+                            <div class="d-flex align-items-center mb-1">
+                                <div id="color-pale-cerulean" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span class="me-1">Pale Cerulean</span>
                             </div>
                         </div>
+                        <button class="d-none button">Color Value</button>
                     </div>
 
-                    <!-- Eyes -->
-                    <div class="m-0 p-0 d-flex align-items-center">
-                        <span class="text-center" style="width: 1.75em;"><i class="fa-solid icons fa-eye"></i></span>
-                        <span class="fw-bold me-1 desc-font" style="width: 6em;"> Eyes:</span>
-                        <!-- Colors -->
-                        <div class="d-flex align-items-center mb-1">
-                            <div id="color-pale-cerulean" class="colors me-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Click to copy RGB color!"></div><span class="me-1">Pale Cerulean</span>
-                        </div>
+                    <div>
+                        <h5 class="fs-4">Reference Sheet</h5>
+                        <img src="https://via.placeholder.com/680x400" alt="" class="img-fluid">
                     </div>
-                    <button class="d-none button">Color Value</button>
-                </div>
-                </div>
-
-
-            </div>
+                </div> <!-- End of Information -->
+            </div> 
             
             <!-- Character column -->
             <div class="col-12 col-lg-8 d-flex flex-column">
@@ -745,7 +799,7 @@
                         <!-- Tabs PC -->
                         <ul class="col-6 nav pe-2 d-none d-lg-flex" id="pics-myndi" role="tablist">
                             <li class="nav-item me-auto">
-                                <p class="nav-link m-0 text-white">References</p>
+                                <p class="nav-link m-0 text-white">Showcase <i class="fa-solid fa-angles-right"></i></p>
                             </li>
                             <li class="nav-item" role="presentation">
                               <button class="nav-link active" id="myndi-illus-tab" data-bs-toggle="tab" data-bs-target="#myndi-illustration" type="button" role="tab" aria-controls="myndi-illustration" aria-selected="true">Illustration</button>
@@ -760,6 +814,8 @@
 
                         <!-- Introduction paragraph -->
                         <div class="col-12 col-lg-6 introduction my-3 my-lg-0">
+                            <h4 class="fs-4">Introduction</h4>
+                            <hr class="w-25 m-0 mb-2">
                             <p class="m-0 p-0 mb-3" style="word-wrap: break-word;">
                                 <b class="ps-3">Myndi Bonart</b> is one of the principal characters in an unreleased fictional novel. Biological sister of <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Smytsu</a>, adopted by <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Astrid</a>, and met <a role="link" aria-disabled="true" class="text-secondary text-decoration-underline">Nysha</a> along the way.
                             </p>
@@ -793,13 +849,13 @@
                         <div class="col-12 col-lg-6 m-0 p-0">
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active px-2" id="myndi-illustration" role="tabpanel" aria-labelledby="myndi-illus-tab" tabindex="0">
-                                    <img src="assets/img/tinywow_1_5387065.png" class="other-images">
+                                    <img src="assets/img/myndi-illustration.png" class="other-images">
                                 </div>
                                 <div class="tab-pane fade px-2" id="myndi-ingame" role="tabpanel" aria-labelledby="myndi-ingame-tab" tabindex="0">
-                                    <img src="assets/img/Screenshot_191221_49955.jpg" alt="Myndi ingame" class="other-images">
+                                    <img src="assets/img/myndi-ingame.jpg" alt="Myndi ingame" class="other-images">
                                 </div>
                                 <div class="tab-pane fade px-2" id="myndi-3d" role="tabpanel" aria-labelledby="myndi-3d-tab" tabindex="0">
-                                    <img src="assets/img/63c13f013ba4e2b2ea49acb5d5611724.jpg" alt="Myndi 3D" class="other-images">
+                                    <img src="assets/img/myndi-3d.jpg" alt="Myndi 3D" class="other-images">
                                 </div>
                             </div>
                         </div>
